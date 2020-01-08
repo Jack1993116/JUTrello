@@ -36,7 +36,7 @@ router.post('/', function(req, res, next) {
 	          },
 	          (err, token) => {
 	          	// console.log(token);
-
+	          	
 	            res.json({
 	              success: true,
 	              token: "Bearer " + token

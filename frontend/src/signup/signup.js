@@ -35,27 +35,27 @@ class SignUp extends React.Component{
 	}
 	sendinfo(){
 		console.log("signup button pressed");
-		if (this.state.signEmail !== "") {
+		if ((this.state.signEmail !== "") && (this.state.signPassword !== "")) {
 			let userinfo = {
 				signEmail: this.state.signEmail,
 				signPassword: this.state.signPassword
 			}
 			this.props.sendinfo(userinfo,this.props.history);
 		}else{
-			console.log("input email");
+			alert("Input email and password!");
 		}
 		
 	}
 	userlogin(){
 		console.log("login button pressed");
-		if (this.state.signEmail !== "") {
+		if ((this.state.signEmail !== "") && (this.state.signPassword !== "")) {
 			let userinfo = {
 				loginEmail: this.state.signEmail,
 				loginPassword: this.state.signPassword
 			}
 			this.props.userlogin(userinfo, this.props.history);
 		}else{
-			console.log("input email");
+			alert("Input email and password!");		
 		}
 	}
 	render(){

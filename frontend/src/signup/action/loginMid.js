@@ -15,7 +15,11 @@ const loginMid = (userinfo,history) => dispatch => {
     		localStorage.setItem("token", token);
     		history.push("/dashboard");
     		dispatch({type: logIn, info: userinfo})
-    	}
+    	}else{
+        history.push("/")
+          alert("incorect acount!")
+      }
+          
     });
 };
 

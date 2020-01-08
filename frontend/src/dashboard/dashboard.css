@@ -1,0 +1,142 @@
+.navsearch_div {
+	display: inline;
+	width: auto;
+	height: 30px;
+}
+
+.right {
+	display: flex;
+	float: right;
+	align-items: center;
+}
+
+.left {
+	display: flex;
+	float: left;
+	align-items: center;	
+}
+
+.navbar_div {
+	position: relative;
+	height: 50px;
+	padding: 5px 10px;
+	background-color: #026aa7;
+	align-items: center;
+}
+
+.nav_btn {
+	background-color: #4e97c2;
+	border: none;
+	height: 35px;
+	margin: 3px;
+	color: white;
+	min-width: 35px;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.nav_btn:hover {
+	background-color: #4eA7c2;
+	border: none;
+	height: 35px;
+	margin: 3px;
+}
+
+.navsearch {
+	background-color: hsla(0,0%,100%,.3);
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: hsla(0,0%,100%,.5);
+    float: left;
+    font-size: 13px;
+    height: 32px;
+    line-height: 19px;
+    margin: 0;
+    outline: none;
+    padding-left: 8px;
+    padding-right: 30px;
+    transition: width .15s;
+    width: 180px;
+}
+
+.navsearch:focus {
+	background-color: white;
+	color: black;
+    padding-left: 8px;
+    padding-right: 50px;
+    transition: width .15s;
+    width: 250px;
+}
+
+.trelloimg {
+	cursor: pointer;
+	position: absolute;
+	left: 50vw;
+	top: 0;
+	width: 100px;
+	height: 50px;
+	margin: 0;
+	transform: translateX(-50px);
+}
+
+.boardbody_div {
+	display: flex;
+	align-self: center;
+}
+
+.list {
+	height: 35px;
+	width: 200px;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.list:hover {
+	background-color: #e4f0f6;
+	columns: #0079bf;
+}
+
+.board_div {
+	position: relative;
+	width: 180px;
+	height: 100px;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin: 0;
+	overflow: hidden;
+}
+
+.board_div:hover {
+	opacity: 0.7;
+	transition: 0.2s;
+}
+
+.board_div:hover .board_star{
+	right: 20px;
+	transition: 0.2s;
+}
+
+.board_star {
+	position: absolute;
+	bottom: 5px;
+	right: -20px;
+}
+
+.board_star:hover {
+	cursor: pointer;
+	transform: scale(1.5);
+} 
+
+.board_title {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: white;
+}
