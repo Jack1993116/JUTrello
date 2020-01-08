@@ -1,0 +1,630 @@
+button:focus {
+	outline: none;
+}
+
+.mainbody {
+	padding: 0px 120px 0px 120px;
+}
+
+.header {
+	background: linear-gradient(135deg, #0079bf, #5067c5);
+	padding: 120px 120px 70px 120px;
+	color: white;
+}
+
+@media (max-width: 600px) {
+
+	.header h1 {
+		font-size: 30px !important;
+		font-weight: bold;
+		line-height: 1.2;
+	}
+
+	.black_btn {
+		width: 40% !important;
+		height: 45px;
+		margin: 0 10px;
+	}
+
+	.nav_signup_btn {
+		width: auto !important;
+		margin-left: 5px !important;
+	}
+
+	.header p {
+		font-weight: bolder;
+		font-size: 20px !important;
+		line-height: 2;
+	}
+
+  	.header {
+		background: linear-gradient(135deg, #0079bf, #5067c5);
+		padding: 100px 10px 70px 10px;
+		color: white;
+		overflow: hidden !important;
+		text-align: center;
+	}
+
+	.slider_div {
+		overflow: hidden;
+	}
+
+	.navbar {
+		position: fixed;
+		background-color: #0079bf;
+		height: 70px;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+		box-shadow: none;
+		width: 100%;
+		z-index: 5;
+	}
+
+	.signup_input {
+	    display: none !important;
+	}
+
+	.mainbody {
+		padding: 0px 10px 0px 10px !important;
+	}
+
+	.arrow1 {
+		display: none;
+	}
+
+	.arrow2 {
+		display: none;
+	}
+
+	.robort_div {
+		display: none;
+	}
+
+	.smarter_div {
+	    margin: 20px 10px !important;
+	    padding: 40px;
+	}
+
+	.planing_div {
+		background-image: none !important;
+		background-size: cover;
+		height: 350px !important;
+		width: auto;
+		align-items: center;
+		display: flex;
+	}
+
+	.signup_input_div {
+		order: 2 !important;
+	}
+
+	.header_div1 {
+		order: 1 !important;
+	}
+
+	.header_div2 {
+		order: 3 !important;
+	}
+
+	.order_div_2 {
+		order: 1 !important;
+	}
+
+	.order_div_1 {
+		order: 2 !important;
+		text-align: center !important;
+	}
+
+	.info_img {
+		float: none !important;
+		display: flex;
+    	margin: auto;
+	}
+
+}
+
+@media (min-width: 770px) and (max-width: 1024px){
+	.header {
+		background: linear-gradient(135deg, #0079bf, #5067c5);
+		padding: 100px 30px 70px 30px !important;
+		color: white;
+	}
+
+	.mainbody {
+		padding: 0px 30px 0px 30px !important;
+	}
+
+	.black_btn {
+		width: 40% !important;
+		height: 45px;
+		margin: 0 10px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 770px){
+	.planing_div {
+		background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/97db7688a52a697ea9376a5f0fe5d98f/trellians-2x-2.png');
+		background-size: cover;
+		background-position: center;
+    	background-repeat: no-repeat;
+		height: 400px;
+		width: auto;
+		align-items: center;
+		display: flex;
+	}
+
+	.slider_div {
+		overflow: hidden;
+	}
+
+	.trelloway_img {
+		padding: 10px 180px !important;
+	}
+
+	.smarter_div {
+	    margin: 20px 10px !important;
+	    padding: 40px;
+	}
+
+	.signup_input {
+	    width: 400px !important;
+	}
+
+	.header_signup_btn {
+		width: auto !important;
+		padding: 5px 30px !important;
+	}
+
+	.header {
+		background: linear-gradient(135deg, #0079bf, #5067c5);
+		padding: 100px 35px 70px 35px !important;
+		color: white;
+	}
+
+	.mainbody {
+		padding: 0px 35px 0px 35px !important;
+	}
+
+	.robort_div {
+		display: none;
+	}
+
+	.arrow1 {
+		left: 0% !important;
+	}
+
+	.arrow2 {
+		right: 0% !important;
+	}
+
+	.signup_input_div {
+		order: 2 !important;
+	}
+
+	.header_div1 {
+		order: 1 !important;
+	}
+
+	.header_div2 {
+		order: 3 !important;
+	}
+
+}
+
+.header h1 {
+	font-size: 53px;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.header p {
+	font-weight: bolder;
+	font-size: 25px;
+	line-height: 2;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+h3 {
+	font-weight: bold;
+}
+
+p {
+	font-weight: bolder;
+	font-size: 19px;
+	line-height: 1.5;
+}
+
+.header_img {
+	width: 100%;
+	height: 100%;
+}
+
+.info_img {
+	width: 75%;
+	height: 75%;
+	float: right;
+}
+
+.header_signup_btn {
+	height: 52px;
+	width: 300px;
+	border-radius: 7px;
+	margin-left: 10px;
+	border: none;
+	font-size: 25px;
+	color: #fff;
+    background-color: #61BD4F;
+    border-color: #61BD4F;
+}
+
+.header_signup_btn:hover {
+	
+    background-color: #61BD6F;
+    border-color: #61BD4F;
+}
+
+.signup_input {
+    width: 420px;
+    border-radius: .3rem;
+    line-height: 38px;
+    padding: 4px;
+    padding-left: 16px;
+    border-color: white;
+    border-style: solid;
+    font-size: 24px;
+}
+
+.div_white {
+	background-color: white;
+}
+
+
+.footer {
+	background: linear-gradient(to bottom, #fff 0%, #f7ecff 46%, #d2ecff 74%, #fff 100%);
+	text-align: center;
+}
+
+.navbar {
+	position: fixed;
+	background-color: #0079bf;
+	height: 70px;
+	padding-left: 50px;
+	padding-right: 50px;
+	box-shadow: none;
+	width: 100%;
+	z-index: 5;
+}
+
+.nav_signup_btn {
+	color: #5067c5;
+	font-size: 17px;
+	font-weight: bold;
+	width: 110px;
+	height: 40px;
+	background-color: white;
+	border: none;
+	border-radius: 8px;
+	margin-left: 15px;
+}
+
+.login_a {
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.login_a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+.grey_btn {
+	width: auto;
+	height: 45px;
+	color: #fff;
+	font-size: 20px;
+    background-color: #6D8EA2;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 22px;
+
+}
+
+.grey_btn:hover {
+	background-color: #5e7b8c;
+	transition: .3s;
+
+}
+
+.section_div {
+	position: relative;
+	margin: 30px 0px;
+	overflow: hidden;
+}
+
+.howworks_div {
+	position: relative;
+    height: 500px;
+    margin: 0 auto;
+    max-width: 880px;
+    box-shadow: 0 0 5px black;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.howworks_img {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+.bussnessLaunch {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: grey;
+	color: white;
+	border-radius: 7px;
+	padding: 5px 15px;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.user_div1 {
+    background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/pattern-library/images/8022b0b4f4360ba3f737c48cd908e448/user-2.png');
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 210px;
+
+}
+
+.user_div2 {
+    background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/pattern-library/images/87c23234a3807e474d70ea3ab47bd8dc/user-1.png');
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 245px;
+}
+
+.user_div3 {
+    background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/pattern-library/images/5788b03f8281e4d0d993f95d97c6265f/user-3.png');
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 280px;
+}
+
+.robort_div {
+	position: absolute;
+	top: 40px;
+	left: 220px;
+	background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/29ebb9898948a581f7948952ba3811fd/robot.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 190px;
+    height: 170px;
+    transform: rotate(20deg);
+}
+
+.changetext_div {
+	position: absolute;
+	top: 400px;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0,0,0, .7);
+	text-align: center;
+	font-size: 20px;
+	font-weight: bolder;
+	color: white;
+	border-radius: 0 0 20px 20px;
+	cursor: pointer;
+}
+
+.change_div_div {
+	position: absolute;
+	top: 450px;
+	left: 50%;
+	height: 50px;
+	width: auto;
+	text-align: center;
+	display: inline-flex;
+	z-index: 3;
+	transform: translateX(-105px);
+	cursor: pointer;
+}
+
+.change_div {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #6D8EA2;
+	margin: 5px 15px;
+	display: flex;
+	cursor: pointer;
+}
+
+.change_div:hover {
+	background-color: #00C2E0;
+}
+
+.arrow1 {
+	position: absolute;
+	top: 45%;
+	left: 1%;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.05);
+	padding: 15px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.arrow1:hover {
+	background-color: #00C2E0;
+	color: white;
+}
+
+.arrow2:hover {
+	background-color: #00C2E0;
+	color: white;
+}
+
+.arrow2 {
+	position: absolute;
+	top: 45%;
+	right: 1%;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0,.05);
+	padding: 15px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+
+.trelloway_img {
+	width: 90%;
+}
+
+.smarter_div {
+    background: linear-gradient(180deg, #42548e 0%, #6b668c 100%);
+    border-radius: 12px;
+    color: white;
+    margin: 40px 120px;
+    padding: 40px;
+}
+
+.findout_btn {
+	margin-top: 50px; 
+	width: auto;
+	height: 45px;
+	color: black;
+	font-size: 20px;
+    background-color: #EBECF0;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 25px;
+}
+
+.findout_btn:hover {
+    background-color: #dedfe2;	
+}
+
+.footer_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+}
+
+.footer_a {
+	margin: 20px 10px;
+	font-size: 17px;
+	color: grey;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.footer_a:hover {
+	color: black;
+	text-decoration: underline;
+	transition: .2s;
+}
+
+.lan_select {
+	height: 40px;
+	width: 160px;
+	margin: 20px;
+	color: grey;
+	background-color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,.1);
+}
+
+.teamtask_div {
+	background: linear-gradient(#3EB9DE, #3A80DE);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(74,115,159,0.29);
+    cursor: default;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 18px;
+    position: relative;
+    text-align: left;
+
+}
+
+.teamtask_title {
+	background-color: #319dc9;
+	width: 120px;
+	border-radius: 10px;
+	color:white;
+	font-size: 15px;
+	font-weight: bolder;
+	padding: 5px;
+	text-align: center;
+}
+
+.task_card{
+    display: inline-flex;
+    background-color: #E5EFF5;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 10px;
+    width: 230px;
+}
+
+.task_card_inner_div {
+	background-color: white;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 3px;
+    width: 200px;
+}
+
+.smarter_img {
+	margin: 10px 15px;
+}
+
+.black_btn {
+	width: auto;
+	height: 45px;
+	margin: 0 10px;
+}
+
+.black_btn:hover {
+	opacity: .9;
+	transition: .1s;
+}
+
+.planing_div {
+	background-image: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/97db7688a52a697ea9376a5f0fe5d98f/trellians-2x-2.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	align-items: center;
+	display: flex;
+}

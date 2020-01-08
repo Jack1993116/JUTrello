@@ -1,0 +1,163 @@
+input:focus {
+	outline: none;
+}
+
+@media (max-width: 640px){
+
+	.leftimg {
+		display: none;
+	}
+
+	.rightimg {
+		display: none;
+	}
+
+	.card_div {
+		width: 350px !important;
+		height: auto;
+		box-shadow: none !important;
+		margin: auto;
+		padding: 10px 30px !important;
+		background-color: white;
+		border-radius: 2px;
+	}
+
+	.main_div {
+		display: flex;
+		align-items: center;
+		background-color: white !important;
+		padding: 10px !important;
+	}
+
+	.trelloimg {
+		margin: 0px !important;
+	}
+
+}
+
+.icon {
+	background: url('https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/8215f6659adc202403198fef903a447e/sign-in-with-google.svg');
+    background-size: cover;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.google-button {
+	width: auto;
+	height: 40px;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.04);
+	padding-top: 5px;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.main_div {
+	display: flex;
+	align-items: center;
+	background-color: #F9FAFC;
+}
+
+.leftimg {
+	width: 30vw;
+	height: auto;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.rightimg {
+	width: 30vw;
+	height: auto;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+.center_div {
+	width: 500px;
+	margin: auto;
+	text-align: center;
+	z-index: 2;
+}
+
+.a_div {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.a_div a {
+	margin: 10px;
+	font-size: 13px;
+	color: grey;
+	text-decoration: none;
+}
+
+.a_div a:hover {
+	color: grey;
+	text-decoration: underline;
+}
+
+.card_div {
+	width: 400px;
+	height: auto;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.05);
+	margin: auto;
+	padding: 40px 30px;
+	background-color: white;
+	border-radius: 2px;
+}
+
+.card_div h5 {
+	font-weight: bold;
+}
+
+.card_div input {
+	height: 45px;
+	width: 100%;
+	padding-left: 10px;
+	margin:15px 0;
+	border-radius: 5px;
+	border-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.02);
+}
+
+.card_div input:focus {
+	border-color: #429ffd;
+	background-color: white;
+	transition: .2s;
+}
+
+.card_div p{
+	font-size: 12px;
+	color: grey;
+	text-align: justify;
+}
+
+.card_div a:hover {
+	text-decoration: underline;
+}
+
+.trelloimg {
+	width: 140px;
+	height: 60px;
+	margin: 40px;
+}
+
+.contunue_button {
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.04);
+}
+
+.contunue_button:disabled {
+	width: 100%;
+	height: 40px;
+	background-color: rgba(0,0,0,0.02);
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.04);
+}
