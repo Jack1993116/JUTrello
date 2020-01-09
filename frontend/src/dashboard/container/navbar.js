@@ -19,7 +19,7 @@ class NavBar extends React.Component{
 					<NavSearch/>
 				</div>
 				
-				<img alt="Trello" className="trelloimg" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/76ceb1faa939ede03abacb6efacdde16/trello-logo-blue.svg"/>
+				<img alt="Trello" className="trelloimg_dashboard" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/76ceb1faa939ede03abacb6efacdde16/trello-logo-blue.svg"/>
 				<div className='right'>
 					<button  className='nav_btn'>
 						<strong>+</strong>

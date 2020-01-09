@@ -5,12 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var passport = require("passport");
 
 
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var loginRouter = require('./routes/login');
+var getinfoRouter = require('./routes/getinfo');
+
+
+const passport    = require('passport');
+
+require('./passport/passport');
 
 var app = express();
 
@@ -25,16 +30,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Passport middleware
-app.use(passport.initialize());
-
-// Passport config
-require("./passport/localpassport")(passport);
 
 
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
+
+// use passport jwt in /getinfo route
+app.use('/getinfo',passport.authenticate('jwt',{session:false}), getinfoRouter);
 
 
 // catch 404 and forward to error handler

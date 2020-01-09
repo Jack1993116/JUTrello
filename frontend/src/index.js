@@ -9,9 +9,17 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import reducer from './signup/reducer/reducer';
+import { combineReducers } from "redux";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+import signupReducer from './signup/reducer/reducer';
+import dashboardReducer from './dashboard/reducer/reducer';
+
+const rootreducer = combineReducers({
+	signup: signupReducer,
+	dashboard: dashboardReducer
+})
+
+const store = createStore(rootreducer, applyMiddleware(thunk));
 
 ReactDOM.render(
 	<Provider store={store}>
