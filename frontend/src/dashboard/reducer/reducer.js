@@ -13,6 +13,10 @@ const reducer = (state = initstate, action) => {
 		    	...state,usercollection: action.usercollection
 		    };
 		}; break;
+
+		case 'gotoboard': {
+			return state;
+		}; break;
 			
 		default: return state;
 	}

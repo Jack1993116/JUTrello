@@ -12,7 +12,7 @@ export const signupMid =(userinfo, history)=>dispatch=>{
     .then(async res => {
     	if (res.status==200) {
         // 
-        history.push("/dashboard");
+        history.push("/login");
         // 
         const {token} = await res.json();
         console.log(token);

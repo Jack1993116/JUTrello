@@ -33,6 +33,11 @@ class NavBar extends React.Component{
 					<button  className='nav_btn circle'>
 					<strong>J</strong>
 					</button>
+
+					// log out test 
+					<button  className='nav_btn' >
+						<strong>logout</strong>
+					</button>
 				</div>
 				
 
