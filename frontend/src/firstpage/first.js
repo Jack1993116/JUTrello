@@ -1,7 +1,5 @@
 import React from 'react';
-import { MDBCol, MDBRow } from 'mdbreact';
 import './first.css';
-import Signup from './component/signup';
 import Navbar from './component/navbar';
 import Header from './component/header';
 import Teamdiv from './component/teamdiv';

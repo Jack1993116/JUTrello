@@ -9,7 +9,7 @@ const loginMid = (userinfo,history) => dispatch => {
       body: JSON.stringify(userinfo)
     })
     .then(async res=> {
-    	if (res.status==200) {
+    	if (res.status===200) {
     		const {token} = await res.json();
     		console.log(token)
     		localStorage.setItem("token", token);

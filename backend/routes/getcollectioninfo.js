@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
+var Collections = require('../models/collections')
 
 
 router.post('/', function(req, res, next) {
@@ -8,10 +8,12 @@ router.post('/', function(req, res, next) {
 	console.log("-----------collectionid:"+req.collectionid)
 
 	//get user collections from collection model
-	if (req.user) {
-		res.json(req.user);
-	}
-	
+	Collections.findOne({_id:req.collectionid})
+	.then(row=>{
+			res.json(row);
+		}
+	)
+	.catch(err => res.json({message: "get onecollection "}))
 
 });
 

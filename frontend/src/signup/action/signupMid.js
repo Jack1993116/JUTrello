@@ -10,7 +10,7 @@ export const signupMid =(userinfo, history)=>dispatch=>{
       body: JSON.stringify(userinfo)
     })
     .then(async res => {
-    	if (res.status==200) {
+    	if (res.status===200) {
         // 
         history.push("/login");
         // 

@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
 var Usercollections = require('../models/usercollections');
-var Collections = require('../models/collections');
-var Groups = require('../models/groups');
 
 
+// require getcollection and getgroup module 
 var getcollectionByColId = require('../mymodules/getcollection');
+var getgroupsByGrpId = require('../mymodules/getgroups');
 
 
 router.post('/', function(req, res, next) {
@@ -16,17 +15,24 @@ router.post('/', function(req, res, next) {
 	
 
 	//get user collection array, group array from usercollection model
-
-	Usercollections.findOne({userid: req.user[0]._id})
-	.then(async usercollection => { 
-		var dd = await getcollectionByColId(usercollection.collections)
-		console.log("3------"+dd)
-		// const collections = usercollection.collections;
-		// const groups = usercollection.groups;
-		})
-
 	if (req.user) {
-		res.json(req.user);
+		Usercollections.findOne({userid: req.user[0]._id})
+		.then(async (usercollection) => { 
+
+			// get collections of request user
+			const usercollections = await getcollectionByColId(usercollection.collections)
+
+			//get groups of request user
+			const usergroups = await getgroupsByGrpId(usercollection.groups)
+
+			// send collections and groups to client
+			res.json({collections:usercollections, groups:usergroups})
+
+		})
+	}
+	
+	if (!req.user) {
+		res.json({message:"error"});
 	}
 	
 

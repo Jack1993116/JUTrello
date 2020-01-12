@@ -1,6 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import Leftimg from './assets/leftimg.svg';
 import Rightimg from './assets/rightimg.svg';
@@ -61,12 +60,12 @@ class SignUp extends React.Component{
 	render(){
 		return (
 			<div className="main_div">
-				<img src={Leftimg} className="leftimg"/>
-				<img src={Rightimg} className="rightimg"/>
+				<img src={Leftimg} className="leftimg" alt='leftimg'/>
+				<img src={Rightimg} className="rightimg" alt='rightimg'/>
 				<div className="center_div">
 					<img alt="Trello" className="trelloimg" src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/trello-header-logos/76ceb1faa939ede03abacb6efacdde16/trello-logo-blue.svg"/>
 					<div className="card_div">
-						<h5>{this.props.type=="signup"?"Sign up":"Log in"} to Trello</h5>
+						<h5>{this.props.type==="signup"?"Sign up":"Log in"} to Trello</h5>
 						
 
 						email:{this.props.currentuser.signEmail}
@@ -76,10 +75,10 @@ class SignUp extends React.Component{
 						<div style={{display: this.state.signEmail===""?"none":""}}>
 							<input type="password" onChange={this.inputpass}/>
 						</div>
-						<p>By signing up, you confirm that you've read and accepted our <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.</p>
+						<p>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
 
 
-						<div style={{display: this.props.type=="login"?"none":""}}>
+						<div style={{display: this.props.type==="login"?"none":""}}>
 							<button className="contunue_button" onClick={this.sendinfo}>
 								<span>Continue</span>
 							</button>
@@ -119,7 +118,7 @@ class SignUp extends React.Component{
 						<hr/>
 					</div>
 					<div>
-						<img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/16006ae28f149063408d601e8c80eddc/atlassian-logo-blue-small.svg" width="150" style={{'margin':'30px'}}/>
+						<img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/c/p/res/images/16006ae28f149063408d601e8c80eddc/atlassian-logo-blue-small.svg" width="150" style={{'margin':'30px'}} alt='img'/>
 					</div>
 					<div className="a_div">
 						<ul style={{"listStyle": "none", "display": "inline"}}>

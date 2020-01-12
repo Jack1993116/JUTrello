@@ -12,6 +12,7 @@ var signupRouter = require('./routes/signup');
 var loginRouter = require('./routes/login');
 var getinfoRouter = require('./routes/getinfo');
 var getcollectioninfoRouter = require('./routes/getcollectioninfo');
+var createboardRouter = require('./routes/createboard');
 
 
 //use passport
@@ -43,8 +44,11 @@ app.use('/login', loginRouter);
 // use passport jwt in /getinfo route
 app.use('/getinfo',passport.authenticate('jwt',{session:false}), getinfoRouter);
 
-//use passport jwt in /getcollection
+//use passport jwt in /getcollection route
 app.use('/getcollectioninfo',passport.authenticate('jwt',{session:false}), getcollectioninfoRouter);
+
+//use passport jwt in /createboard route
+app.use('/createboard',passport.authenticate('jwt',{session:false}), createboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

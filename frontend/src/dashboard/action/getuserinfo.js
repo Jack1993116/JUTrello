@@ -9,8 +9,8 @@ const getuserinfo = (history) => dispatch => {
  		axios
     .post("http://localhost:3001/getinfo")
     .then(res => {
-    		console.log(res.data[0]._id);
-     		dispatch({type:'getuserinfo', usercollection:res.data[0]})
+    		console.log(res.data);
+     		dispatch({type:'getuserinfo', usercollection:res.data})
     })
     .catch(err =>{
     			console.log("get collection error")

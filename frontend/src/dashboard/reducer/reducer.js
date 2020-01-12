@@ -1,5 +1,5 @@
 const initstate = {
-	usercollection: {}
+	usercollection: {collections:[],groups:[]}
 }
 
 const reducer = (state = initstate, action) => {
@@ -10,8 +10,12 @@ const reducer = (state = initstate, action) => {
 
 		case 'getuserinfo' : {
 		    return {
-		    	...state,usercollection: action.usercollection
+		    	usercollection: action.usercollection
 		    };
+		}; break;
+
+		case 'createboard' : {
+			return {usercollection: action.usercollection}
 		}; break;
 
 		case 'gotoboard': {

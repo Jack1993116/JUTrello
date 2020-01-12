@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import {MDBRow, MDBCol} from 'mdbreact';
 import Board from '../component/board';
 import Templete from '../component/templete';
-import Boardmodal from '../component/boardmodal';
+import Createboard from '../component/createboard';
 import getuserinfo from '../action/getuserinfo';
 
 
@@ -39,9 +39,6 @@ class Boardbody extends React.Component{
 			<div style={{padding: "30px 150px"}} className='boardbody_div'>
 				<MDBCol size='2'>
 
-					User_id:{this.props.usercollection._id}
-
-
 					<ul type='none' className='float-right'>
 						<li className='list' onClick={()=>this.setState({board:true,templete:false,home:false})}>board</li>
 						<li className='list' onClick={()=>this.setState({board:false,templete:true,home:false})}>templetes</li>
@@ -51,25 +48,30 @@ class Boardbody extends React.Component{
 				<MDBCol size='10' style={{paddingLeft: '50px'}}>
 					<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
 
-						<li style={{display:"inline"}}>
-							<Board url="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg" title='test' collectionid=''/>
-						</li>
+						{
+							this.props.usercollection.collections.map(row=>{
+								return (<li style={{display:"inline"}} key={row._id}>
+									<Board url={row.imgurl} title={row.title} collectionid={row._id}/>
+								</li>)
+							})
+						}
+
 						<li>
 							<div style={{display:"inline"}}>
-								<Boardmodal/>
+								<Createboard groups={this.props.usercollection.groups}/>
 							</div>
 						</li>
 
 					</ul>
 
 					<ul type="none" style={{display: this.state.templete===false?"none":"flex",flexWrap: 'wrap'}}>
-						<li style={{display:"inline"}}>
+						<li style={{display:"inline"}} key='1'>
 							<Templete url="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg" avatar="https://trello-logos.s3.amazonaws.com/993e0e3c1aa46cabf6261b33e599d7ce/50.png" title="Email Workflow" auther="Tomas Jane" about="If you work in email marketing, you know that getting a great email out the door is no easy task."/>
 						</li>
-						<li style={{display:"inline"}}>
+						<li style={{display:"inline"}} key='2'>
 							<Templete url="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg" avatar="https://trello-logos.s3.amazonaws.com/993e0e3c1aa46cabf6261b33e599d7ce/50.png" title="Email Workflow" auther="Tomas Jane" about="If you work in email marketing, you know that getting a great email out the door is no easy task."/>
 						</li>
-						<li style={{display:"inline"}}>
+						<li style={{display:"inline"}} key='3'>
 							<Templete url="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg" avatar="https://trello-logos.s3.amazonaws.com/993e0e3c1aa46cabf6261b33e599d7ce/50.png" title="Email Workflow" auther="Tomas Jane" about="If you work in email marketing, you know that getting a great email out the door is no easy task."/>
 						</li>
 					</ul>

@@ -1,9 +1,6 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { Link, withRouter } from "react-router-dom";
 
 import './dashboard.css';
-import { connect } from 'react-redux';
 
 // components
 import NavBar from './container/navbar'

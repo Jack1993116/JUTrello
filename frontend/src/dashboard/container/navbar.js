@@ -1,5 +1,4 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
 import NavSearch from '../component/navSearch';
 
 class NavBar extends React.Component{
@@ -34,7 +33,6 @@ class NavBar extends React.Component{
 					<strong>J</strong>
 					</button>
 
-					// log out test 
 					<button  className='nav_btn' >
 						<strong>logout</strong>
 					</button>
