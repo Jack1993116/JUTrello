@@ -5,10 +5,9 @@ var Collections = require('../models/collections')
 
 router.post('/', function(req, res, next) {
 	console.log("-----------passed the jwt passport for getcollection")
-	console.log("-----------collectionid:"+req.collectionid)
 
 	//get user collections from collection model
-	Collections.findOne({_id:req.collectionid})
+	Collections.findOne({_id:req.body.collectionid})
 	.then(row=>{
 			res.json(row);
 		}

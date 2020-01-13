@@ -1,10 +1,10 @@
 import React from 'react';
 import {BrowserRouter as Router, withRouter} from 'react-router-dom';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 import { connect } from 'react-redux';
 
-import {MDBRow, MDBCol} from 'mdbreact';
+import {MDBRow, MDBCol, MDBIcon} from 'mdbreact';
 import Board from '../component/board';
 import Templete from '../component/templete';
 import Createboard from '../component/createboard';
@@ -40,9 +40,28 @@ class Boardbody extends React.Component{
 				<MDBCol size='2'>
 
 					<ul type='none' className='float-right'>
-						<li className='list' onClick={()=>this.setState({board:true,templete:false,home:false})}>board</li>
-						<li className='list' onClick={()=>this.setState({board:false,templete:true,home:false})}>templetes</li>
-						<li className='list' onClick={()=>this.setState({board:false,templete:false,home:true})}>home</li>
+						<li className='list' onClick={()=>this.setState({board:true,templete:false,home:false})}>
+							<MDBIcon icon="columns" /> board
+						</li>
+						<li className='list' onClick={()=>this.setState({board:false,templete:true,home:false})}>
+							<MDBIcon fab icon="flipboard" /> templetes
+						</li>
+						<li className='list' onClick={()=>this.setState({board:false,templete:false,home:true})}>
+							<MDBIcon icon="house-damage" /> home
+						</li>
+					</ul>
+
+					<ul type='none' className='float-right'>
+						<li className='list'>
+							TEAMS
+						</li>
+						{
+							this.props.usercollection.groups.map(row=>{
+								return (<li className='group-list' key={row._id}>
+									{row.groupname}
+								</li>)
+							})
+						}
 					</ul>
 				</MDBCol>
 				<MDBCol size='10' style={{paddingLeft: '50px'}}>

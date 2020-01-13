@@ -1,0 +1,51 @@
+.boardbar_div {
+	position: relative;
+	height: 50px;
+	padding: 5px 10px;
+	background-color: rgba(244,244,244,.4);
+	align-items: center;
+}
+
+.in_list_div {
+	position: relative;
+	width: 280px;
+	height: auto;
+	padding: 10px;
+	background-color: white;
+	margin: 5px;
+    border-radius: 3px;
+
+}
+
+.in_list_div:hover {
+	background-color: #f9f9f9;
+}
+
+.list_div {
+	background-color: #ebecf0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+    width: 300px;
+    margin: 10px;
+    padding:10px;
+	align-items: center;
+}
+
+.list_title_div {
+	position: relative;
+	width: 280px;
+	height: auto;
+	padding: 10px 10px;
+	margin: 5px;
+    border-radius: 3px;
+}
+
+.list_container_div {
+	display: flex;
+	flex-wrap: wrap;
+}

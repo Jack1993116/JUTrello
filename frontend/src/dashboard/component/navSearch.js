@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
+import {MDBIcon} from 'mdbreact';
 
 
 class NavSearch extends React.Component{
@@ -19,7 +20,9 @@ class NavSearch extends React.Component{
 		return (
 			<div className='navsearch_div'>
 				<input type='seach' className='navsearch' onClick={this.change}/>
-				<span className='navsearch_span'>s</span>
+				<span className='navsearch_span'>
+					<MDBIcon icon="search" />
+				</span>
 			</div>
 			
 		)

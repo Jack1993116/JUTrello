@@ -11,13 +11,13 @@ const gotoboard = (collectionid,history) => dispatch => {
          axios
         .post("http://localhost:3001/getcollectioninfo",{collectionid: collectionid})
         .then(res => {
-                console.log(res.data[0]._id);
+                console.log(res.data);
+                dispatch({type:'gotoboard', selectedcol:res.data})
                 history.push('/usercollection');
-                dispatch({type:'gotoboard', usercollection:res.data[0]})
         })
         .catch(err =>{
                 console.log("get collection error")
-                history.push('/')
+                history.push('/dashboard')
             }
         );
    

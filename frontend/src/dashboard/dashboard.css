@@ -94,9 +94,23 @@
 	width: 200px;
 	font-size: 20px;
 	font-weight: bolder;
+	padding-left: 15px;
 }
 
 .list:hover {
+	background-color: #e4f0f6;
+	columns: #0079bf;
+}
+
+.group-list {
+	height: 35px;
+	width: 200px;
+	font-size: 16px;
+	font-weight: bolder;
+	padding-left: 18px;
+}
+
+.group-list:hover {
 	background-color: #e4f0f6;
 	columns: #0079bf;
 }

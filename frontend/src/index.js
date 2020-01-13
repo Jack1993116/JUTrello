@@ -13,10 +13,29 @@ import { combineReducers } from "redux";
 
 import signupReducer from './signup/reducer/reducer';
 import dashboardReducer from './dashboard/reducer/reducer';
+import userboardReducer from './userboard/reducer/reducer';
+
+
+	
+// signup reducer: 
+	// userinfo: {	
+	// 	signEmail: "defaultEmail", 
+	// 	signPassword: "defaultPassword" 
+// }
+// dashboard reducer:
+	// {
+	// 	usercollection: {collections:[],groups:[]},
+	// 	selectedcol: {}
+	// }
+//  userboard reducer:
+	// {
+
+	// }
 
 const rootreducer = combineReducers({
 	signup: signupReducer,
-	dashboard: dashboardReducer
+	dashboard: dashboardReducer,
+	userboard: userboardReducer
 })
 
 const store = createStore(rootreducer, applyMiddleware(thunk));
