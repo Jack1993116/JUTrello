@@ -7,7 +7,8 @@ class NavSearch extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
-			seach: ""
+			seach: "",
+			show: true
 		}
 		this.change=this.change.bind(this);
 	}
@@ -19,10 +20,15 @@ class NavSearch extends React.Component{
 	render(){
 		return (
 			<div className='navsearch_div'>
-				<input type='seach' className='navsearch' onClick={this.change}/>
-				<span className='navsearch_span'>
-					<MDBIcon icon="search" />
-				</span>
+				<input type='seach' className='navsearch' onChange={this.change}/>
+				<div className='navsearch_div_icon1' style={{color:"black"}}>
+					<MDBIcon icon="search"/>
+				</div>
+				<div className='navsearch_div_icon2' style={{display:"none"}}>
+					<MDBIcon icon="times" />
+					<MDBIcon icon="location-arrow" />
+				</div>
+				
 			</div>
 			
 		)

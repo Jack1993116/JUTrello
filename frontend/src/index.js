@@ -25,7 +25,8 @@ import userboardReducer from './userboard/reducer/reducer';
 // dashboard reducer:
 	// {
 	// 	usercollection: {collections:[],groups:[]},
-	// 	selectedcol: {}
+	// 	selectedcol: {},
+	// 	stared: []
 	// }
 //  userboard reducer:
 	// {

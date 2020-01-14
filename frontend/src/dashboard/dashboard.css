@@ -1,7 +1,15 @@
 .navsearch_div {
+	position: relative;
 	display: inline;
 	width: auto;
 	height: 30px;
+}
+
+.navsearch_div_icon1, .navsearch_div_icon2{
+	position: absolute;
+	right: 7px;
+	top: 4px;
+	color: white;
 }
 
 .right {
@@ -67,10 +75,10 @@
 .navsearch:focus {
 	background-color: white;
 	color: black;
-    padding-left: 8px;
-    padding-right: 50px;
-    transition: width .15s;
-    width: 250px;
+  padding-left: 8px;
+  padding-right: 50px;
+  transition: width .15s;
+  width: 250px;
 }
 
 .trelloimg_dashboard {
@@ -84,6 +92,13 @@
 	transform: translateX(-50px);
 }
 
+.none_btn {
+	background-color: rgba(0,0,0,0);
+	border: none;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
 .boardbody_div {
 	display: flex;
 	align-self: center;
@@ -92,9 +107,11 @@
 .list {
 	height: 35px;
 	width: 200px;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: bolder;
-	padding-left: 15px;
+	padding: 7px 18px;
+	border-radius: 5px;
+
 }
 
 .list:hover {
@@ -102,17 +119,10 @@
 	columns: #0079bf;
 }
 
-.group-list {
-	height: 35px;
-	width: 200px;
-	font-size: 16px;
-	font-weight: bolder;
-	padding-left: 18px;
-}
-
-.group-list:hover {
-	background-color: #e4f0f6;
-	columns: #0079bf;
+.dashboard_sub_title {
+	padding-left: 60px;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .create_board_div {
@@ -133,7 +143,7 @@
 	opacity: 0.7;
 }
 
-.board_div {
+.board_back_div {
 	position: relative;
 	width: 180px;
 	height: 100px;
@@ -143,7 +153,7 @@
 	overflow: hidden;
 }
 
-.board_div:hover {
+.board_back_div:hover {
 	opacity: 0.7;
 	transition: 0.2s;
 }
@@ -151,14 +161,34 @@
 .board_div:hover .board_star{
 	right: 20px;
 	transition: 0.2s;
+	z-index: 5;
+}
+
+.board_div {
+	position: relative;
+	overflow: hidden;
 }
 
 .board_star {
 	position: absolute;
-	bottom: 5px;
+	bottom: 15px;
 	right: -20px;
 	color: grey;
 	font-weight: bolder;
+	z-index: 10;
+}
+
+.fontgrey {
+	color: grey !important;
+}
+
+.board_star_show {
+	position: absolute;
+	bottom: 15px;
+	right: 20px;
+	font-weight: bolder;
+	z-index: 10;
+	cursor: pointer;
 }
 
 .board_star:hover {
@@ -266,3 +296,4 @@
 	font-weight: bolder;
 	padding: auto 25px;
 }
+

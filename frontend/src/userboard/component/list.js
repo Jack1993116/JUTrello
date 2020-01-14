@@ -34,7 +34,7 @@ class List extends Component {
 		super(props);
 		this.state={
 			contents: {
-				done: ["plan","plan","plan","plan","plan"],
+				done: ["plan","plan"],
 				todo: ["talk over", "design","design","design","design"]
 			},
 			imgurl: "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg",

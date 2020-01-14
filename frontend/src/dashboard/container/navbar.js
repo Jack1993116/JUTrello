@@ -34,17 +34,13 @@ class NavBar extends React.Component{
 							<MDBIcon icon="info-circle" />
 						</strong>
 					</button>
-					<button  className='nav_btn'>
+					<button  className='nav_btn' style={{background:'#eb5a46'}}>
 						<strong>
-							<MDBIcon far icon="bell" />
+							<MDBIcon far icon="bell"/>
 						</strong>
 					</button>
 					<button  className='nav_btn circle'>
 					<strong>J</strong>
-					</button>
-
-					<button  className='nav_btn' >
-						<strong>logout</strong>
 					</button>
 				</div>
 				
