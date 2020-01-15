@@ -30,23 +30,25 @@ class Createboard extends React.Component{
 	}
 
 	modaltoggle(){
+
 		this.setState({
 			modal: !this.state.modal
 		})
 	}
 
 	inputtitle(e){
+
 		this.setState({
 			title: e.target.value
 		})
-		console.log(e.target.value)
+
 	}
 
 	inputgroup(e){
+
 		this.setState({
-			group: e.target.value
+			group: e.target.value=="No team"?"":e.target.value
 		})
-		console.log(e.target.value)
 
 	}
 
@@ -54,9 +56,11 @@ class Createboard extends React.Component{
 		const createinfo = {
 			title: this.state.title,
 			imgurl: this.state.imgurl,
-			group: this.state.group
+			group: this.state.group,
 		}
 		this.props.createboard(createinfo, this.props.history);
+		this.modaltoggle();
+		this.props.rerenderParent();
 	}
 
 	render(){
@@ -73,6 +77,8 @@ class Createboard extends React.Component{
 						<MDBCol size="7">
 							<input type="text" placeholder='Add title' className="board_modal_input" onChange={this.inputtitle}/>
 							<select className="modal_select" onChange={this.inputgroup}>
+								
+								{/*donot change no team name if it change change the backend to save group*/}
 								<option key='0'>No team</option>
 								
 								{

@@ -25,8 +25,8 @@ router.post('/', function(req, res, next) {
 			//get groups of request user
 			const usergroups = await getgroupsByGrpId(usercollection.groups)
 
-			// send collections and groups to client
-			res.json({collections:usercollections, groups:usergroups})
+			// send collections and groups and starred list to client
+			res.json({collections:usercollections, groups:usergroups, stared: usercollection.stared})
 
 		})
 	}

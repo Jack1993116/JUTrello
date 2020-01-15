@@ -28,6 +28,11 @@ class Boardbody extends React.Component{
 			templete: false,
 			home: false,
 		}
+		this.rerender = this.rerender.bind(this);
+	}
+
+	rerender(){
+		this.forceUpdate();
 	}
 
 	async componentWillMount(){
@@ -78,19 +83,30 @@ class Boardbody extends React.Component{
 						<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
 
 							{
-								this.props.usercollection.collections.map(row=>{
-									if (this.props.stared.indexOf(row._id)!=(-1)) {
-										return (
-											<li style={{display:"inline"}} key={`stared${row._id}`}>
-												<Board 
-													url={row.imgurl} 
-													title={row.title} 
-													collectionid={row._id} 
-													starstate='true'/>
-											</li>
-											);
-									}
+
+								this.props.stared.map(starone => {
+
+									return(
+
+										this.props.usercollection.collections.map(row=>{
+											if (starone==row._id) {
+												return (
+													<li style={{display:"inline"}} key={`stared${row._id}`}>
+														<Board 
+															url={row.imgurl} 
+															title={row.title} 
+															collectionid={row._id}
+															color={row.color} 
+															/>
+													</li>
+													);
+											}
+										})
+
+									)
+									
 								})
+								
 							}
 
 						</ul>
@@ -99,7 +115,7 @@ class Boardbody extends React.Component{
 						<div className='dashboard_sub_title'>
 							<MDBIcon far icon="user" /> Personal Boards
 						</div>
-						{this.props.stared}
+						
 						<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
 
 							{
@@ -111,7 +127,8 @@ class Boardbody extends React.Component{
 												<Board url={row.imgurl} 
 															title={row.title} 
 															collectionid={row._id} 
-															starstate='false' />
+															color={row.color} 
+															 />
 											</li>
 										)
 									} else {
@@ -120,7 +137,8 @@ class Boardbody extends React.Component{
 												<Board url={row.imgurl} 
 															title={row.title} 
 															collectionid={row._id} 
-															starstate='true' />
+															color={row.color}  
+															/>
 											</li>
 										)
 									}
@@ -130,7 +148,10 @@ class Boardbody extends React.Component{
 
 							<li>
 								<div style={{display:"inline"}}>
-									<Createboard groups={this.props.usercollection.groups}/>
+									<Createboard 
+										groups={this.props.usercollection.groups}
+										rerenderParent={this.rerender}
+									/>
 								</div>
 							</li>
 
@@ -151,6 +172,19 @@ class Boardbody extends React.Component{
 								<MDBIcon icon="briefcase" /> Upgrade
 							</button>
 						</div>
+
+							<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
+
+							<li>
+								<div style={{display:"inline"}}>
+									<Createboard 
+										groups={this.props.usercollection.groups}
+										rerenderParent={this.rerender}
+									/>
+								</div>
+							</li>
+
+						</ul>
 
 					</div>
 

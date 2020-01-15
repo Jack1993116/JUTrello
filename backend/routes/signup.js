@@ -1,5 +1,6 @@
 
 var Users = require('../models/users');
+var UserCollections = require('../models/usercollections');
 const jwt = require("jsonwebtoken");
 
 var express = require('express');
@@ -27,6 +28,13 @@ router.post('/', function(req, res, next) {
 		          	var newuser = new Users({email: useremail, password: userpassword});
 					newuser.save()
 					.then( (user) => {
+
+						// create new usercolleciton model
+						new UserCollections({
+							userid: user._id,
+							collections: [],
+							groups: []
+						}).save();
 						
 						const payload = {
 				          	id: user.id,

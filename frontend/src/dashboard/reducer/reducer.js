@@ -1,5 +1,5 @@
 const initstate = {
-	usercollection: {collections:[],groups:[]},
+	usercollection: {collections:[],groups:[], stared: []},
 	selectedcol: {},
 	stared: []
 }
@@ -11,31 +11,19 @@ const reducer = (state = initstate, action) => {
 			break;
 
 		case 'stared' : {
-				let stars = state.stared;
-				let pos = stars.indexOf(action.stared);
-				if (pos == (-1)) {
-					return {...state, stared: [...state.stared, action.stared]};
-				} else {
-					return { ...state }
-				}
-				
-			}; break;
 
-		case 'nostared' : {
-				let stars = state.stared;
-				let pos = stars.indexOf(action.stared);
-				stars.splice(pos, 1);
-				return {...state, stared: [...stars]};
+				return {...state, stared: action.stared};
+
 			}; break;
 
 		case 'getuserinfo' : {
 		    return {
-		    	...state,usercollection: action.usercollection
+		    	...state,usercollection: action.usercollection, stared: action.usercollection.stared
 		    };
 		}; break;
 
 		case 'createboard' : {
-			return {...state,usercollection: action.usercollection}
+			return {...state,usercollection: { ...action.usercollection}}
 		}; break;
 
 		case 'gotoboard': {
