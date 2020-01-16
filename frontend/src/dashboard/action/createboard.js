@@ -9,8 +9,8 @@ const createboard = (createinfo,history) => dispatch => {
 	axios
     .post("http://localhost:3001/createboard",{createinfo:createinfo})
     .then(res => {
-    		console.log(res.data.usercollection);
-     		dispatch({type:'createboard', usercollection:res.data})
+    		console.log(res.data.newcollection);
+     		dispatch({type:'createboard', newcollection:res.data.newcollection})
             history.push('/dashboard')
     })
     .catch(err =>{

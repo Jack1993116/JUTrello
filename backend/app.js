@@ -14,6 +14,7 @@ var getinfoRouter = require('./routes/getinfo');
 var getcollectioninfoRouter = require('./routes/getcollectioninfo');
 var createboardRouter = require('./routes/createboard');
 var staredRouter = require('./routes/stared');
+var creategroupRouter = require('./routes/creategroup');
 
 
 //use passport
@@ -53,6 +54,10 @@ app.use('/createboard',passport.authenticate('jwt',{session:false}), createboard
 
 //use passport jwt in /stared route
 app.use('/stared',passport.authenticate('jwt',{session:false}), staredRouter);
+
+
+//use passport jwt in /creategroup route
+app.use('/creategroup',passport.authenticate('jwt',{session:false}), creategroupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

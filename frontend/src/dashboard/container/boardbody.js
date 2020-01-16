@@ -8,6 +8,8 @@ import {MDBRow, MDBCol, MDBIcon} from 'mdbreact';
 import Board from '../component/board';
 import Templete from '../component/templete';
 import Createboard from '../component/createboard';
+import CreateGroup from '../component/createGroup';
+
 import getuserinfo from '../action/getuserinfo';
 
 
@@ -61,12 +63,12 @@ class Boardbody extends React.Component{
 
 					<ul type='none' className='float-right'>
 						<li className='list'>
-							<div>TEAMS <button type='button' className='right none_btn'><MDBIcon icon="plus" /></button></div>
+							<CreateGroup />
 						</li>
 						{
 							this.props.usercollection.groups.map(row=>{
 								return (<li className='list' key={row._id}>
-									<MDBIcon icon="user-friends" /> {row.groupname}
+									<MDBIcon icon="user-friends" /> {row.name}
 								</li>)
 							})
 						}

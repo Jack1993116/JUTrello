@@ -117,6 +117,7 @@
 .list:hover {
 	background-color: #e4f0f6;
 	columns: #0079bf;
+	cursor: pointer;
 }
 
 .dashboard_sub_title {
@@ -297,3 +298,35 @@
 	padding: auto 25px;
 }
 
+.groupTitle {
+	width: 350px;
+	height: 40px;
+
+}
+
+.groupDesc {
+	width: 350px;
+	height: 200px;
+}
+
+.groupContinue {
+	background-color: #49852e;
+	width: 300px;
+	text-align: center;
+	height: 40px;
+	color: white;
+	border-radius: 5px;
+	border: none;
+}
+
+.createGroupImg {
+	width: 330px;
+	height: 330px;
+}
+
+.groupImgDiv {
+	background-size: "cover";
+	background-image: url('https://a.trellocdn.com/prgb/dist/images/create-team/wavy-border.1ea9c6f8c41d10be0e12.svg');
+	position: "relative";
+	text-align: "center";
+}

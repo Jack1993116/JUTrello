@@ -45,7 +45,7 @@ class Createboard extends React.Component{
 	}
 
 	inputgroup(e){
-
+		
 		this.setState({
 			group: e.target.value=="No team"?"":e.target.value
 		})
@@ -83,7 +83,7 @@ class Createboard extends React.Component{
 								
 								{
 									this.props.groups.map(row=>{
-										return (<option key={row._id}>{row.groupname}</option>)
+										return (<option key={row._id} value={row._id}>{row.name}</option>)
 									})
 								}
 

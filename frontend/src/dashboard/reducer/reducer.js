@@ -23,11 +23,19 @@ const reducer = (state = initstate, action) => {
 		}; break;
 
 		case 'createboard' : {
-			return {...state,usercollection: { ...action.usercollection}}
+			return {...state,
+				usercollection: {collections:[...state.usercollection.collections,action.newcollection],groups:[...state.usercollection.groups], stared: [...state.usercollection.stared]},
+			};
 		}; break;
 
 		case 'gotoboard': {
 			return {...state,selectedcol: action.selectedcol};
+		}; break;
+
+		case 'creategroup': {
+			return {...state,
+				usercollection: {collections:[...state.usercollection.collections],groups:[...state.usercollection.groups, action.group], stared: [...state.usercollection.stared]},
+			};
 		}; break;
 			
 		default: return state;

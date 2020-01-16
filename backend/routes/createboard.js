@@ -23,20 +23,23 @@ router.post('/', function(req, res, next) {
 			usercol.collections = [...usercol.collections,id];
 
 			usercol.save();
-		})
+		});
+
+		res.json({newcollection: col});
+
 	})
 
 
 
-
-	if ( req.body.createinfo.group == "" ) {
-		usercol.groups
-	}
+// database mistakes in teams and groups. 
+	// if ( req.body.createinfo.group != "" ) {
+	// 	usercol.groups
+	// }
 
 	// req group control not finished
 	
 
-	res.send('success')
+	// res.send('success')
 	
 
 });
