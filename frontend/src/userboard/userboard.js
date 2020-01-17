@@ -17,26 +17,44 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchProps = (dispatch) => ({
+	initUserBoardState: (info) => dispatch({type: "initUserBoardState", info: info})
 })
 
 
 class Userboard extends React.Component{
+
 	constructor(props){
 		super(props);
 	}
+
 	componentWillMount(){
-		console.log(this.props.userboard)
+
+		if ( !this.props.userboard._id ) {
+			
+			window.location.href = "/dashboard";
+			
+		} else {
+			
+			this.props.initUserBoardState(this.props.userboard);
+			
+		}
 	}
 	render(){
 		
-			return (
-			<div style={{backgroundImage:`url('${this.props.userboard.imgurl}')`,minHeight:"100vh", backgroundSize:'cover'}}>
+		return (
+
+			<div style={{
+				backgroundImage:`url('${this.props.userboard.imgurl}')`,
+				minHeight:"100vh", 
+				backgroundSize:'cover',
+				backgroundColor: this.props.userboard.color
+			}}>
 				<NavBar/>
-				<BoardVar/>
+				<BoardVar boardtitle={this.props.userboard.title}/>
 				<MainBody/>
 			</div>
 
-			)
+		)
 			
 	}
 }

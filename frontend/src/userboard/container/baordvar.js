@@ -10,6 +10,9 @@ class Boardvar extends React.Component{
 		return (
 			<div className='boardbar_div'>
 				<div className='left'>
+					<h4 style={{fontWeight:"bolder",marginRight:"15px"}}>
+						{ this.props.boardtitle }
+					</h4>
 					<button className='nav_btn'>
 						<MDBIcon far icon="star" />
 					</button>

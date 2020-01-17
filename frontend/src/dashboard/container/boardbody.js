@@ -159,34 +159,44 @@ class Boardbody extends React.Component{
 
 						</ul>
 
-						<div className='dashboard_sub_title' >
-							<MDBIcon icon="users" /> Group Boards
-							<button className='nav_btn fontgrey'>
-								Boards
-							</button>
-							<button className='nav_btn fontgrey'>
-								<MDBIcon icon="user" /> members
-							</button>
-							<button className='nav_btn fontgrey'>
-								<MDBIcon icon="cog" /> Settings
-							</button>
-							<button className='nav_btn fontgrey'>
-								<MDBIcon icon="briefcase" /> Upgrade
-							</button>
-						</div>
 
-							<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
+						{
+							this.props.usercollection.groups.map(grouprow => {
+								return (
+									<>
+										<div className='dashboard_sub_title' >
+											<MDBIcon icon="users" /> { grouprow.name }
+											<button className='nav_btn fontgrey'>
+												Boards
+											</button>
+											<button className='nav_btn fontgrey'>
+												<MDBIcon icon="user" /> members {grouprow.members.length}
+											</button>
+											<button className='nav_btn fontgrey'>
+												<MDBIcon icon="cog" /> Settings
+											</button>
+											<button className='nav_btn fontgrey'>
+												<MDBIcon icon="briefcase" /> Upgrade
+											</button>
+										</div>
 
-							<li>
-								<div style={{display:"inline"}}>
-									<Createboard 
-										groups={this.props.usercollection.groups}
-										rerenderParent={this.rerender}
-									/>
-								</div>
-							</li>
+										<ul type="none" style={{display: this.state.board===false?"none":"flex",flexWrap: 'wrap'}}>
 
-						</ul>
+											<li>
+												<div style={{display:"inline"}}>
+													<Createboard 
+														groups={this.props.usercollection.groups}
+														rerenderParent={this.rerender}
+													/>
+												</div>
+											</li>
+
+										</ul>
+										</>
+									)
+							})
+						}
+
 
 					</div>
 

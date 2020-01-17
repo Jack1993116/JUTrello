@@ -10,16 +10,12 @@ const gotoboard = (collectionid,history) => dispatch => {
          }
          axios
         .post("http://localhost:3001/getcollectioninfo",{collectionid: collectionid})
-        .then(res => {
-                console.log(res.data);
-                dispatch({type:'gotoboard', selectedcol:res.data})
+        .then(async res => {
+                console.log(res.data.collection);
+                await dispatch({type:'gotoboard', selectedcol: res.data.collection })
                 history.push('/usercollection');
         })
-        .catch(err =>{
-                console.log("get collection error")
-                history.push('/dashboard')
-            }
-        );
+       
    
 
 };

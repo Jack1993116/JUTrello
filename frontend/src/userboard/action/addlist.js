@@ -1,0 +1,25 @@
+import setAuthToken from './setAuthToken';
+import axios from 'axios';
+
+const addlist = (title) => dispatch => {
+
+	// if (localStorage.token) {
+	// 	setAuthToken(localStorage.token);
+	// }
+	// axios
+ //    .post("http://localhost:3001/addlist",{title:title})
+ //    .then(res => {
+ //    		console.log(res.data);
+ //    })
+ //    .catch(err =>{
+	// 		console.log("create list error")
+ //        }
+ //    );
+
+    dispatch({type:'addlist', title: title});
+
+
+
+};
+
+export default addlist;

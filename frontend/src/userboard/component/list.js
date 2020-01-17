@@ -1,46 +1,22 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import { connect } from "react-redux";
 import arrayMove from 'array-move';
 
+import AddContent from "./addcontent";
 
-const SortableItem = SortableElement(({value}) => <div className='in_list_div'>{value}</div>);
 
-const SortableList = SortableElement(SortableContainer(({items}) => {
-	return (
-		<div className='list_div'>
-			<div className='list_title_div'>
-				title
-			</div>
-				{items.map((value, index) => (
-					<SortableItem index={index} value={value} />
-				))}
-		</div>
-		);
-}));
-
-const Content = SortableContainer(({contents}) => {
-	return (
-		<div className='list_container_div'>
-		{Object.keys(contents).map((key, index) => (
-				<SortableList items={contents[key]} index={key} />
-			))}
-		</div>
-		);
+const mapStateToProps = state => ({
+	boardId: state.userboard.boardId,
+	boardTitle: state.userboard.boardTitle,
+	boardImgurl: state.userboard.boardImgurl,
+	boardColor: state.userboard.boardColor,
+	boardContents: state.userboard.boardContents
 });
 
 class List extends Component {
 	constructor(props){
 		super(props);
-		this.state={
-			contents: {
-				done: ["plan","plan"],
-				todo: ["talk over", "design","design","design","design"]
-			},
-			imgurl: "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/641x960/9c0a570b328ab427f18a15bfd2ffd838/photo-1568313081041-dbd174f69e3b.jpg",
-			title: "test board",
-			_id: "5e189440684ca669cdc16cb6"
-		}
 		this.onSortEnd=this.onSortEnd.bind(this);
 	}
 	onSortEnd = ({oldIndex, newIndex}) => {
@@ -62,11 +38,25 @@ class List extends Component {
 		// console.log(this.state.contents)
 	};
 	render() {
+		console.log(this.props.boardContents);
 		return (
-				<Content contents={this.state.contents} onSortEnd={this.onSortEnd}/>
+			<div className='list_container_div'>
+				{
+					Object.keys(this.props.boardContents).map(key => {
+						
+						 return (<div className='list_div'>
+ 											<div className='list_title_div'>
+ 												{key}
+ 											</div>
+ 												{this.props.boardContents[key]}
+ 												<AddContent key={key} title={key}/>
+ 										</div>);
+					})
+				}
+				</div>
 			);
 	}
 }
 
 
-export default List;
+export default connect(mapStateToProps,null)(List);

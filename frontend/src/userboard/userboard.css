@@ -31,7 +31,7 @@
     position: relative;
     white-space: normal;
     width: 300px;
-    margin: 10px;
+    margin: 10px 10px auto 10px;
     padding:10px;
 	align-items: center;
 }
@@ -48,4 +48,77 @@
 .list_container_div {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.board_addListDiv {
+	display: flex;
+	width: 300px;
+	height: auto;
+	font-weight: bold;
+	padding: 10px 20px;
+	font-size: 15px;
+	background-color: rgba(0,0,0,0.1);
+	transition: 0.4s;
+	border-radius: 5px;
+	margin: 10px 10px auto 10px;
+}
+
+.board_addListDiv--title {
+	margin: 0px;
+	padding: auto;
+	color: white;
+	font-weight: bold;
+}
+
+.board_addListDiv--input {
+	background-color: white;
+	border: 2px solid blue;
+	outline: none;
+	height: 38px;
+	width: 260px;
+	border-radius: 3px;
+	padding-left: 15px;
+}
+
+.board_addListDiv--button {
+	border: none;
+	background-color: #5aac44;
+	border-radius: 3px;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 5px 12px;
+	margin: 5px;
+	color: white;
+}
+
+.board_addCardDiv {
+	width: 280px;
+}
+
+.board_addCardDiv--title {
+	margin: 0px;
+	padding: auto;
+	color: grey;
+	font-weight: bold;
+}
+
+.board_addCardDiv--input {
+	background-color: white;
+	border: 2px solid blue;
+	outline: none;
+	height: 80px;
+	width: 280px;
+	border-radius: 3px;
+	padding-left: 15px;
+}
+
+.board_addCardDiv--button {
+	border: none;
+	background-color: #5aac44;
+	border-radius: 3px;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 5px 12px;
+	margin: 5px;
+	color: white;
 }

@@ -9,10 +9,10 @@ router.post('/', function(req, res, next) {
 	//get user collections from collection model
 	Collections.findOne({_id:req.body.collectionid})
 	.then(row=>{
-			res.json(row);
+			res.json({ collection : row });
 		}
 	)
-	.catch(err => res.json({message: "get onecollection "}))
+	// .catch(err => res.json({message: "get onecollection error"}))
 
 });
 

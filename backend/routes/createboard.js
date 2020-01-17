@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
 	
 	// create new collection from req data and then save it in usercolloetions.collections
 	var color = "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")";
-	var newcol = new Collections({title: req.body.createinfo.title, imgurl: req.body.createinfo.imgurl,color: color,contents:{}});
+	var newcol = new Collections({title: req.body.createinfo.title, imgurl: req.body.createinfo.imgurl,color: color,contents:{default:[""]}});
 	newcol.save()
 	.then(col => {
 		Usercollections.findOne({userid: req.user[0]._id})
