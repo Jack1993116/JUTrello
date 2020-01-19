@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
-import {render} from 'react-dom';
+import React, {Component} from "react";
+import {render} from "react-dom";
 import { connect } from "react-redux";
-import arrayMove from 'array-move';
+import arrayMove from "array-move";
 
 import AddContent from "./addcontent";
+import ListContent from "./listContent";
 
 
 const mapStateToProps = state => ({
@@ -14,46 +15,74 @@ const mapStateToProps = state => ({
 	boardContents: state.userboard.boardContents
 });
 
+// const mapDispatchProps = dispatch => ({
+// 	changeListTitle: (title) => dispatch(changeListTitle(title, id))
+// })
+
 class List extends Component {
 	constructor(props){
 		super(props);
-		this.onSortEnd=this.onSortEnd.bind(this);
+
+		this.parentrerender = this.parentrerender.bind(this);
+		this.changeListTitle = this.changeListTitle.bind(this);
+		this.onDragStart = this.onDragStart.bind(this);
 	}
-	onSortEnd = ({oldIndex, newIndex}) => {
-		// this.setState(({contents}) => ({
-		// 			contents: arrayMove(contents, oldIndex, newIndex)
-		// 		}));
-		// const clone = (obj) => Object.assign({}, obj);
-		// const renameKey = (object, key, newKey) => {
-		//   const clonedObj = clone(object);
-		//   const targetKey = clonedObj[key];
-		//   delete clonedObj[key];
-		//   clonedObj[newKey] = targetKey;
-		//   return clonedObj;
-		// };
-		// let newcontents = renameKey(this.state.contents,oldIndex,"newIndex");
-		// this.setState({
-		// 	contents: newcontents
-		// })
-		// console.log(this.state.contents)
-	};
+
+	onDragStart(e){
+		// console.log(e.target.id)
+		// console.log(e.dataTransfer.getdata("text", id)+">>>>");
+	}
+
+	changeListTitle(e) {
+		if (e.target.value !="") {
+
+		} 
+	}
+
+	parentrerender() {
+		this.forceUpdate();
+	}
+
 	render() {
 		console.log(this.props.boardContents);
 		return (
-			<div className='list_container_div'>
+			<div className="list_container_div">
 				{
 					Object.keys(this.props.boardContents).map(key => {
 						
-						 return (<div className='list_div'>
- 											<div className='list_title_div'>
- 												{key}
- 											</div>
- 												{this.props.boardContents[key]}
- 												<AddContent key={key} title={key}/>
- 										</div>);
+						if (key != "default") {
+							return (
+								<div 
+									className="list_div"
+									draggable
+									onDragStart={(e) => this.onDragStart(e)}
+									id = "sdfsdf"
+								 >testtext
+									<textarea className="list_title_div" onChange={this.changeListTitle}>
+										{key}
+									</textarea>
+										{
+											this.props.boardContents[key].map(content => {
+												if (content != "") {
+													return (
+														<ListContent 
+															title={content} 
+															key={content} 
+															
+															/>
+													);
+												}
+												
+											})
+										}
+									<AddContent key={this.props.boardId} title={key} parentrerender = {this.parentrerender}/>
+								</div>
+							);
+						}
+					 
 					})
 				}
-				</div>
+			</div>
 			);
 	}
 }

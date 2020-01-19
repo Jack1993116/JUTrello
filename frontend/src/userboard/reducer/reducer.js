@@ -8,7 +8,8 @@ const initstate = {
 
 const reducer = (state = initstate, action) => {
 	switch(action.type){
-		case 'addlist' : {
+
+		case "addlist" : {
 			let newlist = {};
 			newlist[action.title] = [""];
 			console.log(newlist)
@@ -17,7 +18,7 @@ const reducer = (state = initstate, action) => {
 			};
 		}; break;
 
-		case 'addcontent' : {
+		case "addcontent" : {
 			console.log(action.title)
 			console.log(action.content)
 			state.boardContents[action.title].push(action.content);
@@ -36,6 +37,7 @@ const reducer = (state = initstate, action) => {
 		}; break;
 
 		default: return state;
+		
 	}
 }
 

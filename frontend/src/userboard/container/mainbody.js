@@ -9,7 +9,7 @@ class MainBody extends React.Component{
 	}
 	render(){
 		return (
-			<div style={{display:"flex", alignItems: "top"}}>
+			<div className="mainbody_div">
 				<List/>
 				<AddList/>
 			</div>			
