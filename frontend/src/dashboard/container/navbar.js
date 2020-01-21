@@ -11,9 +11,11 @@ class NavBar extends React.Component{
 		return (
 			<div className='navbar_div'>
 				<div className='left'>
-					<button className='nav_btn'>
-						<MDBIcon icon="home" />
-					</button>
+					<a href="/dashboard">
+						<button className='nav_btn'>
+							<MDBIcon icon="home" />
+						</button>
+					</a>
 					<button  className='nav_btn'>
 						<strong>Boards</strong>
 					</button>

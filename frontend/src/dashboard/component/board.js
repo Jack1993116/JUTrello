@@ -47,7 +47,7 @@ class Board extends React.Component{
 
 				<div className='board_back_div'  
 					style={{backgroundImage: `url('${this.props.url}')`, 
-							backgroundSize: 'cover',
+							backgroundSize: 'contain',
 							backgroundColor: this.props.color
 						}} 
 					onClick={this.gotoboard} >

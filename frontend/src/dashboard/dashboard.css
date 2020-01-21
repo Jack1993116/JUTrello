@@ -252,7 +252,7 @@
 }
 
 .board_modal_input {
-	width: 250px;
+	width: 230px;
 	height: 30px;
 	font-size: 15px;
 	border: none;
@@ -326,7 +326,99 @@
 
 .groupImgDiv {
 	background-size: "cover";
-	background-image: url('https://a.trellocdn.com/prgb/dist/images/create-team/wavy-border.1ea9c6f8c41d10be0e12.svg');
+	background-image: url("https://a.trellocdn.com/prgb/dist/images/create-team/wavy-border.1ea9c6f8c41d10be0e12.svg");
 	position: "relative";
 	text-align: "center";
+}
+
+.home_list_div-img {
+	background-color: #fdf4e7;
+    background-image: url("https://a.trellocdn.com/prgb/dist/images/home/orientation/no-content.e25c676458c1f4cb280b.svg");
+    height: 130px;
+    width: 430px;
+    background-size: cover;
+}
+
+.home_list {
+	display: flex;
+	align-items: center;
+}
+
+.home_list_div {
+	background-color: white;
+	height: 260px;
+	width: 430px;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	margin: 20px;
+}
+
+.home_list_div-text {
+	text-align: center;
+	padding: 10px;
+}
+
+.home_list_link {
+	margin-left: 50px;
+}
+
+.create_board_div--bar {
+	width: 200px;
+	height: 40px;
+	padding: 7px 18px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: grey;
+}
+
+.create_board_div--bar:hover {
+	background-color: rgba(9,30,66,.13);
+}
+
+.createboard-btn {
+	background-color: rgba(9,30,66,.18);
+	padding: 5px;
+	border-radius: 3px;
+}
+
+.create_board_dropdown-text {
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.create_dropdown {
+	height: 25px;
+	padding: 0 20px !important;
+}
+
+.start_temp_a {
+	color: white;
+	font-weight: bold;
+	display: flex;
+}
+
+.modal-content {
+	background-color: rgba(0,0,0,0);
+	box-shadow: none !important;
+}
+
+.modal_input_info {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.cross_btn {
+	background-color: rgba(0,0,0,0);
+	color: white;
+	border: none;
+	float: right;
+}
+
+.modal_image_gallery {
+	width: 40px;
+	height: 40px;
+	background-size: cover;
+	border-radius: 5px;
+	cursor: pointer;
 }

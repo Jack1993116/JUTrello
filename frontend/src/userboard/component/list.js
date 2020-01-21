@@ -2,9 +2,14 @@ import React, {Component} from "react";
 import {render} from "react-dom";
 import { connect } from "react-redux";
 import arrayMove from "array-move";
-import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
 import AddContent from "./addcontent";
 import ListContent from "./listContent";
+
+import changecollection from "../action/changecollection";
+import dragdrop from "../action/dragdrop";
+
+
 
 
 const mapStateToProps = state => ({
@@ -15,9 +20,12 @@ const mapStateToProps = state => ({
 	boardContents: state.userboard.boardContents
 });
 
-// const mapDispatchProps = dispatch => ({
-// 	changeListTitle: (title) => dispatch(changeListTitle(title, id))
-// })
+const mapDispatchProps = dispatch => ({
+	// changeListTitle: (title) => dispatch(changeListTitle(title, id)),
+	changecollection: (collection,id) => dispatch(changecollection(collection,id)),
+	dragdrop: (destination,source,draggableId) => dispatch(dragdrop(destination,source,draggableId))
+
+})
 
 
 class List extends Component {
@@ -25,11 +33,18 @@ class List extends Component {
 		super(props);
 		this.parentrerender = this.parentrerender.bind(this);
 		this.changeListTitle = this.changeListTitle.bind(this);
-		this.onSortEnd = this.onSortEnd.bind(this);
+		this.onDragEnd = this.onDragEnd.bind(this);
 	}
 
-	onSortEnd({oldIndex, newIndex}){
-		console.log(oldIndex+"/"+newIndex)
+	async onDragEnd(result){
+		console.log(result)
+		console.log(this.props.boardContents)
+
+		await this.props.dragdrop(result.destination,result.source,result.draggableId);
+		var collection = {
+				contents: this.props.boardContents 
+			};
+		this.props.changecollection(collection,this.props.boardId);
 	}
 
 	changeListTitle(e) {
@@ -43,50 +58,78 @@ class List extends Component {
 	}
 
 	render() {
-		const SortableItem = SortableElement(({content}) => <ListContent title={content} />);
-
-		const Content = SortableContainer(({tt}) => {
-				return (
-					<div 
-						className="list_div"
-						val =  {tt}
-					 >
-						<textarea className="list_title_div" onChange={this.changeListTitle} defaultValue={tt}/>
-							{
-								this.props.boardContents[tt].map((content,index) => {
-									if (content != "") {
-										return (
-											<SortableItem 
-												content={content}
-												index = {index}/>
-										);
-									}
-									
-								})
-							}
-						<AddContent key={this.props.boardId} title={tt} parentrerender = {this.parentrerender}/>
-					</div>
-				);
-		});
 
 		console.log(this.props.boardContents);
 		return (
-			<div className="list_container_div">
-				{
-					Object.keys(this.props.boardContents).map((key,index) => {
-						
-						if (key != "default") {
-							return (
-								<Content tt={key} index={index} onSortEnd={this.onSortEnd}/>
-							);
-						}
-					 
-					})
-				}
-			</div>
-			);
+			 <DragDropContext
+        onDragEnd={this.onDragEnd}
+      >
+
+				<div className="list_container_div">
+					{
+						Object.keys(this.props.boardContents).map((key,index) => {
+							
+							if (key != "default") {
+								return (
+									
+									<div className="list_div" key={`${key}${index}`}>
+										<div>
+											<textarea className="list_title_div" onChange={this.changeListTitle} defaultValue={key}/>
+										</div>
+											<Droppable droppableId={key} type="Task" key={`droppable${key}${index}`}>
+
+        								{(provided, snapshot) => 
+        									<div ref={provided.innerRef}
+								              {...provided.droppableProps}
+								              >
+														{
+															this.props.boardContents[key].map((content,index) => {
+																if (content != "") {
+																	return (
+																		<Draggable
+															        draggableId={content}
+															        index={index}
+															        key={`draggable${content}${index}`}
+															      >
+																		{
+										                	(provided, snapshot) => (
+										                		<div 
+											                		{...provided.draggableProps}
+															            {...provided.dragHandleProps}
+															            ref={provided.innerRef}
+															            isdragging={`${content}${index}`}
+															            key={`${content}${index}`}
+														            >
+																					<ListContent title={content} />
+																				</div>
+										                		)
+										                }
+																		
+																		</Draggable>
+																	);
+																} 
+															})
+														}
+														{provided.placeholder}
+													</div>
+												}
+
+        							</Droppable>
+										<AddContent key={this.props.boardId} title={key} parentrerender = {this.parentrerender}/>
+									</div>
+										
+								);
+							}
+						 
+						})
+					}
+				</div>
+
+			</DragDropContext>
+		);
+
 	}
 }
 
 
-export default connect(mapStateToProps,null)(List);
+export default connect(mapStateToProps,mapDispatchProps)(List);

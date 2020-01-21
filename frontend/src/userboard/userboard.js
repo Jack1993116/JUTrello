@@ -46,7 +46,7 @@ class Userboard extends React.Component{
 			<div style={{
 				backgroundImage:`url('${this.props.userboard.imgurl}')`,
 				minHeight:"100vh", 
-				backgroundSize:'cover',
+				backgroundSize:'contain',
 				backgroundColor: this.props.userboard.color
 			}}>
 				<NavBar/>
