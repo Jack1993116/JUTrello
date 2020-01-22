@@ -1,10 +1,10 @@
 import React from "react";
-import {BrowserRouter as Router, withRouter} from "react-router-dom";
+import { withRouter} from "react-router-dom";
 // import { browserHistory } from "react-router";
 
 import { connect } from "react-redux";
 
-import {MDBRow, MDBCol, MDBIcon} from "mdbreact";
+import { MDBCol, MDBIcon} from "mdbreact";
 import Board from "../component/board";
 import Templete from "../component/templete";
 import Createboard from "../component/createboard";
@@ -16,10 +16,11 @@ import getuserinfo from "../action/getuserinfo";
 const mapStateToProps = state => ({
 	usercollection: state.dashboard.usercollection,
 	stared: state.dashboard.stared
-})
+});
+
 const mapDispatchProps = (dispatch) => ({
 	getuserinfo: (history) => dispatch(getuserinfo(history))
-})
+});
 
 
 class Boardbody extends React.Component{
@@ -100,7 +101,7 @@ class Boardbody extends React.Component{
 									return(
 
 										this.props.usercollection.collections.map(row=>{
-											if (starone==row._id) {
+											if (starone===row._id) {
 												return (
 													<li style={{display:"inline"}} key={`stared${row._id}`}>
 														<Board 
@@ -109,6 +110,7 @@ class Boardbody extends React.Component{
 															collectionid={row._id}
 															color={row.color} 
 															key={`staredboard${row._id}`}
+															type="mainboard"
 															/>
 													</li>
 													);
@@ -133,7 +135,7 @@ class Boardbody extends React.Component{
 							{
 								this.props.usercollection.collections.map(row=>{
 
-									if (this.props.stared.indexOf(row._id) == (-1)) {
+									if (this.props.stared.indexOf(row._id) === (-1)) {
 										return (
 											<li style={{display:"inline"}} key={row._id}>
 												<Board url={row.imgurl} 
@@ -141,6 +143,7 @@ class Boardbody extends React.Component{
 															collectionid={row._id} 
 															color={row.color} 
 															key={`board${row._id}`}
+															type="mainboard"
 															 />
 											</li>
 										)
@@ -150,7 +153,8 @@ class Boardbody extends React.Component{
 												<Board url={row.imgurl} 
 															title={row.title} 
 															collectionid={row._id} 
-															color={row.color}  
+															color={row.color}
+															type="mainboard" 
 															/>
 											</li>
 										)
@@ -187,7 +191,7 @@ class Boardbody extends React.Component{
 											<button className="nav_btn fontgrey">
 												<MDBIcon icon="cog" /> Settings
 											</button>
-											<button className="nav_btn fontgrey">
+											<button className="nav_btn fontgrey btn_pink">
 												<MDBIcon icon="briefcase" /> Upgrade
 											</button>
 										</div>

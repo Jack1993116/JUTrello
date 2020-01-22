@@ -23,10 +23,6 @@ const mapDispatchProps = (dispatch) => ({
 
 class Userboard extends React.Component{
 
-	constructor(props){
-		super(props);
-	}
-
 	componentWillMount(){
 
 		if ( !this.props.userboard._id ) {
@@ -46,10 +42,11 @@ class Userboard extends React.Component{
 			<div style={{
 				backgroundImage:`url('${this.props.userboard.imgurl}')`,
 				minHeight:"100vh", 
-				backgroundSize:'contain',
+				backgroundSize: "cover",
+    			backgroundPosition: "center",
 				backgroundColor: this.props.userboard.color
 			}}>
-				<NavBar/>
+				<NavBar bgcolor="rgba(255,255,255,0.25)"/>
 				<BoardVar boardtitle={this.props.userboard.title}/>
 				<MainBody/>
 			</div>

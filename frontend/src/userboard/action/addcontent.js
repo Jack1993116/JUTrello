@@ -1,5 +1,3 @@
-import setAuthToken from './setAuthToken';
-import axios from 'axios';
 
 const addcontent = (content,title) => dispatch => {
 

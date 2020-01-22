@@ -44,20 +44,48 @@ class Board extends React.Component{
 		return (
 
 			<div className='board_div'>
+				{
+					this.props.type=="mainboard" &&
+					<div className='board_back_div'  
+						style={{backgroundImage: `url('${this.props.url}')`, 
+								backgroundSize: "cover",
+	    						backgroundPosition: "center",
+								backgroundColor: this.props.color
+							}} 
+						onClick={this.gotoboard} >
+						<div className='board_title'>
+						
+							{this.props.title}
 
-				<div className='board_back_div'  
-					style={{backgroundImage: `url('${this.props.url}')`, 
-							backgroundSize: 'contain',
-							backgroundColor: this.props.color
-						}} 
-					onClick={this.gotoboard} >
-					<div className='board_title'>
+						</div>
 					
-						{this.props.title}
-
 					</div>
+				}
+				{
+					this.props.type=="sidepanel" && 
+					
+					<div className='panel_board_back_div'
+						onClick={this.gotoboard} >
+						<div style={{backgroundImage: `url('${this.props.url}')`, 
+								backgroundSize: "cover",
+								width: "45px",
+								height: "45px",
+								opacity: "1",
+								zIndex: "40",
+	    						backgroundPosition: "center",
+								backgroundColor: this.props.color
+							}} >
+						</div>
+						<div className='panel_board_title'>
+						
+							{this.props.title}
+
+						</div>
+						
+					</div>
+					
+				}
 				
-				</div>
 				{
 					this.props.flag.map(row=>{
 

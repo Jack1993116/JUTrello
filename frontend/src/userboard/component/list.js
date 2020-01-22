@@ -97,7 +97,6 @@ class List extends Component {
 											                		{...provided.draggableProps}
 															            {...provided.dragHandleProps}
 															            ref={provided.innerRef}
-															            isdragging={`${content}${index}`}
 															            key={`${content}${index}`}
 														            >
 																					<ListContent title={content} />

@@ -8,16 +8,13 @@ import Boardbody from './container/boardbody'
 
 
 class Dashboard extends React.Component{
-	constructor(props){
-		super(props);
-	}
 	render(){
 		// if (!localStorage.token) {
 		// 	return "can not get dashboard. log in and try."
 		// }
 		return (
 			<div style={{backgroundColor:'#fafbfc',minHeight:"100vh"}}>
-				<NavBar/>
+				<NavBar bgcolor="#026aa7"/>
 				<Boardbody />
 			</div>
 		)

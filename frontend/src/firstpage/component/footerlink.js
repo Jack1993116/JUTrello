@@ -15,17 +15,17 @@ class Planing extends React.Component{
 			</div>
 			<div>
 				<ul style={{"listStyle": "none", "display": "inline"}}>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Templates</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Pricing</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Apps</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Jobs</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Blog</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Developers</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>About</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Help</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Legal</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Cookie Settings</a></li>
-					<li style={{'display': 'inline-block'}}><a href='#' className='footer_a'>Privacy</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Templates</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Pricing</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Apps</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Jobs</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Blog</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Developers</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>About</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Help</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Legal</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Cookie Settings</a></li>
+					<li style={{'display': 'inline-block'}}><a href='/' className='footer_a'>Privacy</a></li>
 				</ul>
 			</div>
 			<div>

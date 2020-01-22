@@ -1,22 +1,57 @@
 import React from 'react';
 import NavSearch from '../component/navSearch';
+import BoardSidePanel from "../component/boardsidepanel";
 import {MDBIcon} from 'mdbreact';
 
 
 class NavBar extends React.Component{
 	constructor(props){
 		super(props);
+		this.state = {
+			boardSidePanel: false
+		};
+		this.setWrapperRef = this.setWrapperRef.bind(this);
+		this.handleClickOutside = this.handleClickOutside.bind(this);
+		this.boardSidePanel = this.boardSidePanel.bind(this);
 	}
+
+	setWrapperRef(node) {
+		this.wrapperRef = node;
+	}
+
+	handleClickOutside(event) {
+		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+			this.setState({
+				boardSidePanel: false
+			});
+		}
+	}
+
+	boardSidePanel(){
+		this.setState({
+			boardSidePanel: !this.state.boardSidePanel
+		})
+	}
+
+	componentDidMount() {
+		document.addEventListener('mousedown', this.handleClickOutside);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('mousedown', this.handleClickOutside);
+	}
+
+
 	render(){
 		return (
-			<div className='navbar_div'>
+			<div ref={this.setWrapperRef} className='navbar_div' style={{backgroundColor: this.props.bgcolor}} >
 				<div className='left'>
 					<a href="/dashboard">
 						<button className='nav_btn'>
 							<MDBIcon icon="home" />
 						</button>
 					</a>
-					<button  className='nav_btn'>
+					<button  className='nav_btn' onClick={this.boardSidePanel}>
 						<strong>Boards</strong>
 					</button>
 					<NavSearch/>
@@ -45,9 +80,11 @@ class NavBar extends React.Component{
 					<strong>J</strong>
 					</button>
 				</div>
+				{
+					this.state.boardSidePanel && <BoardSidePanel />
+				}
 				
-
-
+				
 			</div>
 			
 		)
