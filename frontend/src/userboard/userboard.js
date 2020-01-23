@@ -23,7 +23,7 @@ const mapDispatchProps = (dispatch) => ({
 
 class Userboard extends React.Component{
 
-	componentWillMount(){
+	async componentWillMount(){
 
 		if ( !this.props.userboard._id ) {
 			
@@ -31,10 +31,24 @@ class Userboard extends React.Component{
 			
 		} else {
 			
-			this.props.initUserBoardState(this.props.userboard);
+			await this.props.initUserBoardState(this.props.userboard);
 			
 		}
 	}
+
+	async componentDidMount(){
+
+		if ( !this.props.userboard._id ) {
+			
+			window.location.href = "/dashboard";
+			
+		} else {
+			
+			await this.props.initUserBoardState(this.props.userboard);
+			
+		}
+	}
+	
 	render(){
 		
 		return (

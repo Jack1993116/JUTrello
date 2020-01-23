@@ -39,6 +39,9 @@ class List extends Component {
 	async onDragEnd(result){
 		console.log(result)
 		console.log(this.props.boardContents)
+		if (result.destination == null) {
+			return;
+		}
 
 		await this.props.dragdrop(result.destination,result.source,result.draggableId);
 		var collection = {

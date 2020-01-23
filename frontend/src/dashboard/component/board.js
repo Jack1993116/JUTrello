@@ -28,9 +28,9 @@ class Board extends React.Component{
 		
 	}
 
-	gotoboard(){
+	async gotoboard(){
 
-		this.props.gotoboard(this.props.collectionid,this.props.history);
+		await this.props.gotoboard(this.props.collectionid,this.props.history);
 
 	}
 
