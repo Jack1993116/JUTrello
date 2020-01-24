@@ -1,6 +1,6 @@
 import {logIn} from '../const/const';
 const loginMid = (userinfo,history) => dispatch => {
-	fetch("http://localhost:3001/login", {
+	fetch("http://localhost:3001/api/login", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

@@ -9,7 +9,7 @@ const stared = (id) => dispatch => {
 
  		}
  		axios
-    .post("http://localhost:3001/stared", {staredid: id})
+    .post("http://localhost:3001/api/stared", {staredid: id})
     .then(res => {
 
      		dispatch({type:'stared', stared:res.data.stared});

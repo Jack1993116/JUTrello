@@ -7,7 +7,7 @@ const getuserinfo = (history) => dispatch => {
  			setAuthToken(localStorage.token);
  		}
  		axios
-    .post("http://localhost:3001/getinfo")
+    .post("http://localhost:3001/api/getinfo")
     .then(res => {
     		console.log(res.data);
      		dispatch({type:'getuserinfo', usercollection:res.data})

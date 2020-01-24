@@ -7,7 +7,7 @@ const createboard = (createinfo,history) => dispatch => {
 		setAuthToken(localStorage.token);
 	}
 	axios
-    .post("http://localhost:3001/createboard",{createinfo:createinfo})
+    .post("http://localhost:3001/api/createboard",{createinfo:createinfo})
     .then(res => {
     		console.log(res.data.newcollection);
      		dispatch({type:'createboard', newcollection:res.data.newcollection})

@@ -8,7 +8,7 @@ const creategroup = (createinfo, history) => dispatch => {
 	}
 
 	axios
-    .post("http://localhost:3001/creategroup",{createinfo:createinfo})
+    .post("http://localhost:3001/api/creategroup",{createinfo:createinfo})
     .then(res => {
     		console.log(res.data.group);
             

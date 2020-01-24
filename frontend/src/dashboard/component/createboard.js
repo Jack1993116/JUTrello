@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, withRouter} from "react-router-dom";
+import {BrowserRouter as Router, withRouter,Link} from "react-router-dom";
 import { connect } from "react-redux";
 
 import {MDBRow, MDBCol, MDBModal, MDBModalBody, MDBIcon, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem} from "mdbreact";
@@ -207,7 +207,7 @@ class Createboard extends React.Component{
 										disabled = { this.state.title ===""?true:false }>
 										create board
 						</button>
-						<a href="/dashboard" className="start_temp_a"><span><MDBIcon fab icon="flipboard" /> start with a template</span></a>
+						<Link to="/dashboard"><a className="start_temp_a"><span><MDBIcon fab icon="flipboard" /> start with a template</span></a></Link>
 					</MDBRow>
 
 				</MDBModalBody>

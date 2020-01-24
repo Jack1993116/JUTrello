@@ -1,7 +1,7 @@
 import {signUp} from '../const/const';
 
 export const signupMid =(userinfo, history)=>dispatch=>{
-	fetch("http://localhost:3001/signup", {
+	fetch("http://localhost:3001/api/signup", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

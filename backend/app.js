@@ -40,28 +40,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 //init passport
 app.use(passport.initialize());
 
-app.use('/', indexRouter);
-app.use('/signup', signupRouter);
-app.use('/login', loginRouter);
+app.use('/api', indexRouter);
+app.use('/api/signup', signupRouter);
+app.use('/api/login', loginRouter);
 
 // use passport jwt in /getinfo route
-app.use('/getinfo',passport.authenticate('jwt',{session:false}), getinfoRouter);
+app.use('/api/getinfo',passport.authenticate('jwt',{session:false}), getinfoRouter);
 
 //use passport jwt in /getcollection route
-app.use('/getcollectioninfo',passport.authenticate('jwt',{session:false}), getcollectioninfoRouter);
+app.use('/api/getcollectioninfo',passport.authenticate('jwt',{session:false}), getcollectioninfoRouter);
 
 //use passport jwt in /createboard route
-app.use('/createboard',passport.authenticate('jwt',{session:false}), createboardRouter);
+app.use('/api/createboard',passport.authenticate('jwt',{session:false}), createboardRouter);
 
 //use passport jwt in /stared route
-app.use('/stared',passport.authenticate('jwt',{session:false}), staredRouter);
+app.use('/api/stared',passport.authenticate('jwt',{session:false}), staredRouter);
 
 
 //use passport jwt in /creategroup route
-app.use('/creategroup',passport.authenticate('jwt',{session:false}), creategroupRouter);
+app.use('/api/creategroup',passport.authenticate('jwt',{session:false}), creategroupRouter);
 
 //use passport jwt in /changecollection route
-app.use('/changecollection',passport.authenticate('jwt',{session:false}), changecollecionRouter);
+app.use('/api/changecollection',passport.authenticate('jwt',{session:false}), changecollecionRouter);
 
 
 

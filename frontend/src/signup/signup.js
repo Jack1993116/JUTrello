@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter,Link } from "react-router-dom";
 
 import Leftimg from './assets/leftimg.svg';
 import Rightimg from './assets/rightimg.svg';
@@ -107,7 +107,7 @@ class SignUp extends React.Component{
 
 
 						<hr/>
-						<a href="/login">Already have an account? Log In</a>
+						<Link to="/login">Already have an account? Log In</Link>
 					</div>
 					<div>
 						<select className='lan_select' onChange={this.changelan}>
