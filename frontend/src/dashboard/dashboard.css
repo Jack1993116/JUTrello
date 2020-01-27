@@ -25,10 +25,12 @@
 }
 
 .navbar_div {
-	position: relative;
+	position: fixed;
 	height: 50px;
 	padding: 5px 10px;
 	align-items: center;
+	width: 100vw;
+	z-index: 1111;
 }
 
 .nav_btn {
@@ -120,7 +122,7 @@
 }
 
 .dashboard_sub_title {
-	padding-left: 60px;
+	padding-left: 20px;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -312,16 +314,40 @@
 .groupTitle {
 	width: 350px;
 	height: 40px;
+	border: 2px solid grey;
+	border-radius: 3px;
+	padding-left: 10px;
+}
 
+.groupTitle:focus {
+	border: 2px solid #206ef3;
 }
 
 .groupDesc {
 	width: 350px;
 	height: 200px;
+	border: 2px solid grey;
+	border-radius: 3px;
+	padding-left: 10px;
+}
+
+.groupDesc:focus {
+	border: 2px solid #206ef3;
+	outline: none;
 }
 
 .groupContinue {
 	background-color: #49852e;
+	width: 300px;
+	text-align: center;
+	height: 40px;
+	color: white;
+	border-radius: 5px;
+	border: none;
+}
+
+.groupContinue:disabled {
+	background-color: grey;
 	width: 300px;
 	text-align: center;
 	height: 40px;
@@ -540,3 +566,112 @@
 	color: black;
 }
 
+.right_panel_div {
+	position: absolute;
+	top: 50px;
+	right: 3px;
+	height: auto;
+	width: auto;
+	padding: 10px 5px;
+	background-color: white;
+	z-index: 100;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	font-weight: bolder;
+	max-height: 80vh;
+	overflow: auto;
+}
+
+.right_panel_div h6 {
+	text-align: center;
+}
+
+.right_panel_div ul {
+	margin: auto;
+	padding: 0;
+}
+
+
+.create_board_div--rightpanel {
+	width: 300px;
+	cursor: pointer;
+	padding: 3px 10px 3px 10px;
+}
+
+.create_board_div--rightpanel:hover {
+	background-color: #e4f0f6;
+}
+
+.create_board_div--rightpanel p {
+	color: grey;
+	font-size: 12px;
+	padding: 0 5px 0 5px;
+}
+
+.create_board_div--rightpanel span {
+	color: grey;
+	font-size: 14px;
+}
+
+.rightCloseBtn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: white;
+	border: none;
+	outline: none;
+}
+
+.infoSidePanel_div {
+	width: 350px;
+	height: 300px;
+	text-align: center;
+}
+
+.infoSidePanel_div:hover {
+	background-color: #e4f0f6;
+}
+
+.infoSidePanel_div img {
+	width: 100%;
+	height: 230px;
+}
+
+.infoSidePanel_div h5 {
+	width: 100%;
+	font-weight: bold;
+	padding-top: 10px;
+
+}
+
+hr {
+	margin: 5px;
+}
+
+.rightPanel_tip {
+	width: 350px;
+	height: 40px;
+	font-size: 15px;
+	text-align: center;
+	cursor: pointer;
+	padding-top: 8px;
+}
+
+.rightPanel_tip:hover {
+	background-color: #e4f0f6;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.account_div {
+	width: 350px;
+	height: 35px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+.account_div:hover {
+	background-color: #e4f0f6;
+	border-radius: 5px;
+	cursor: pointer;
+}

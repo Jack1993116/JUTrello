@@ -84,6 +84,7 @@ class List extends Component {
         								{(provided, snapshot) => 
         									<div ref={provided.innerRef}
 								              {...provided.droppableProps}
+								              className="onelist_div"
 								              >
 														{
 															this.props.boardContents[key].map((content,index) => {

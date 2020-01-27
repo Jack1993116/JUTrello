@@ -111,6 +111,15 @@ class Createboard extends React.Component{
 						<MDBIcon icon="plus" className="createboard-btn"/> Create board
 				</div>
 			}
+
+			{
+				this.props.type==="rightpanel" && 
+				<div className="create_board_div--rightpanel" onClick={this.modaltoggle}>
+						<span><MDBIcon icon="columns"/> Create board...</span>
+						<p>A board is made up of cards ordered on lists. Use it to manage projects, track information, or organize anything.</p>
+				</div>
+			}
+
 			{
 				this.props.type==="sidepanel" && 
 				<div style={{textDecoration: "underline"}} onClick={this.modaltoggle}>Create new board...</div>
@@ -207,7 +216,9 @@ class Createboard extends React.Component{
 										disabled = { this.state.title ===""?true:false }>
 										create board
 						</button>
-						<Link to="/dashboard"><a className="start_temp_a"><span><MDBIcon fab icon="flipboard" /> start with a template</span></a></Link>
+						<Link to="/dashboard" className="start_temp_a">
+							<span><MDBIcon fab icon="flipboard" /> start with a template</span>
+						</Link>
 					</MDBRow>
 
 				</MDBModalBody>

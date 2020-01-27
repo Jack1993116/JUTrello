@@ -1,15 +1,15 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React from "react";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 
-import '../dashboard/dashboard.css'
-import './userboard.css';
+import "../dashboard/dashboard.css";
+import "./userboard.css";
 
 // components
-import NavBar from '../dashboard/container/navbar'
-import BoardVar from '../userboard/container/baordvar'
-import MainBody from '../userboard/container/mainbody'
+import NavBar from "../dashboard/container/navbar";
+import BoardVar from "../userboard/container/boardvar";
+import MainBody from "../userboard/container/mainbody";
 
 
 const mapStateToProps = state => ({
@@ -22,6 +22,17 @@ const mapDispatchProps = (dispatch) => ({
 
 
 class Userboard extends React.Component{
+	constructor(props){
+		super(props);
+		this.state={
+			updated: false
+		}
+		this.init = this.init.bind(this);
+	}
+
+	async init(){
+		await this.props.initUserBoardState(this.props.userboard);
+	}
 
 	async componentWillMount(){
 
@@ -30,31 +41,19 @@ class Userboard extends React.Component{
 			window.location.href = "/dashboard";
 			
 		} else {
-			
+			console.log(this.props.userboard)
 			await this.props.initUserBoardState(this.props.userboard);
-			
 		}
 	}
 
-	async componentDidMount(){
-
-		if ( !this.props.userboard._id ) {
-			
-			window.location.href = "/dashboard";
-			
-		} else {
-			
-			await this.props.initUserBoardState(this.props.userboard);
-			
-		}
-	}
 	
 	render(){
 		
+		this.init();
 		return (
 
 			<div style={{
-				backgroundImage:`url('${this.props.userboard.imgurl}')`,
+				backgroundImage:`url("${this.props.userboard.imgurl}")`,
 				minHeight:"100vh", 
 				backgroundSize: "cover",
     			backgroundPosition: "center",

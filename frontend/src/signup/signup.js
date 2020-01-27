@@ -14,7 +14,9 @@ class SignUp extends React.Component{
 		super(props);
 		this.state={
 			signEmail: "",
-			signPassword: ""
+			signPassword: "",
+			emailerror: "",
+			passworderror: ""
 		}
 		this.inputemail=this.inputemail.bind(this);
 		this.inputpass=this.inputpass.bind(this);
@@ -23,17 +25,18 @@ class SignUp extends React.Component{
 	}
 	inputemail(e){
 		this.setState({
-			signEmail: e.target.value
+			signEmail: e.target.value,
+			emailerror: ""
 		})
 	}
 	inputpass(e){
 
 		this.setState({
-			signPassword: e.target.value
+			signPassword: e.target.value,
+			passworderror: ""
 		})
 	}
 	sendinfo(){
-		console.log("signup button pressed");
 		if ((this.state.signEmail !== "") && (this.state.signPassword !== "")) {
 			let userinfo = {
 				signEmail: this.state.signEmail,
@@ -46,7 +49,6 @@ class SignUp extends React.Component{
 		
 	}
 	userlogin(){
-		console.log("login button pressed");
 		if ((this.state.signEmail !== "") && (this.state.signPassword !== "")) {
 			let userinfo = {
 				loginEmail: this.state.signEmail,
@@ -54,7 +56,17 @@ class SignUp extends React.Component{
 			}
 			this.props.userlogin(userinfo, this.props.history);
 		}else{
-			alert("Input email and password!");		
+			if( this.state.signEmail == ""){
+				this.setState({
+					emailerror: "input email here.",
+				})
+			}
+			if( this.state.signPassword == ""){
+				this.setState({
+					passworderror: "input password here.",
+				})
+			}
+			
 		}
 	}
 	render(){
@@ -67,12 +79,10 @@ class SignUp extends React.Component{
 					<div className="card_div">
 						<h5>{this.props.type==="signup"?"Sign up":"Log in"} to Trello</h5>
 						
-
-						email:{this.props.currentuser.signEmail}
-						
-
+						<label>{this.state.emailerror}</label>
 						<input type="email" placeholder="Enter email" onChange={this.inputemail}/>
 						<div style={{display: this.state.signEmail===""?"none":""}}>
+							<label>{this.state.passworderror}</label>
 							<input type="password" onChange={this.inputpass}/>
 						</div>
 						<p>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>

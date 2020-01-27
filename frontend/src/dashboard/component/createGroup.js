@@ -40,13 +40,13 @@ class CreateGroup extends React.Component{
 			title: e.target.value
 		})
 
-		if ((this.state.title!="")&&(this.state.description!="")) {
+		if ((e.target.value == "") || (this.state.description == "")) {
 			this.setState({
-				continue: true
+				continue: false
 			})
 		} else {
 			this.setState({
-				continue: false
+				continue: true
 			})
 		}
 
@@ -58,13 +58,13 @@ class CreateGroup extends React.Component{
 			description: e.target.value
 		})
 
-		if ((this.state.title!="")&&(this.state.description!="")) {
+		if ((this.state.title=="") || (e.target.value=="")) {
 			this.setState({
-				continue: true
+				continue: false
 			})
 		} else {
 			this.setState({
-				continue: false
+				continue: true
 			})
 		}
 
@@ -72,7 +72,7 @@ class CreateGroup extends React.Component{
 
 	creategroup(){
 
-		if (this.state.continue) {
+		if ((this.state.title !== "") && (this.state.description !== "")) {
 			const groupinfo = {
 				title: this.state.title,
 				description: this.state.description,
@@ -86,31 +86,50 @@ class CreateGroup extends React.Component{
 				continue: false
 			})
 		}
-		
 
 	}
 
 	render(){
 		return (
 			<>
-			<div>
-				TEAMS 
-				<button type='button' className='right none_btn' onClick={this.modaltoggle}>
-					<MDBIcon icon="plus" />
-				</button>
-			</div>
+			{
+				this.props.type==="teamPlus" &&
+				<div>
+					TEAMS 
+					<button type='button' className='right none_btn' onClick={this.modaltoggle}>
+						<MDBIcon icon="plus" />
+					</button>
+				</div>
+			}
+			{
+				this.props.type==="sidePanel" &&
+				<div className="create_board_div--rightpanel" onClick={this.modaltoggle}>
+					<span><MDBIcon icon="user-friends" /> Create Team...</span>
+					<p>A team is a group of boards and people. Use it to organize your company, side hustle, family, or friends.</p>
+				</div>
+			}
+			
 			<MDBModal isOpen={this.state.modal} toggle={this.modaltoggle} size='lg'>
 				<MDBModalBody>
-					<MDBRow>
+					<MDBRow style={{backgroundColor: "white",padding: "15px"}}>
 						<MDBCol size='6'>
-						 <h6>Group Title</h6>
-						 <input type="text" className="groupTitle" onChange={this.inputtitle}/>
-						 <h6>Group Description</h6>
-						 <textarea className="groupDesc" onChange={this.inputdescription}/>
-						 <button 
+						<h4 style={{fontWeight: "bold",paddingTop: "25px"}}>
+							Let's Build a Team
+						</h4>
+						<p style={{fontWeight: "bolder"}}>Boost your productivity by making it easier for everyone to access boards in one location.</p>
+						<label style={{fontSize: "12px"}}>Team Name</label>
+						<input type="text" className="groupTitle" onChange={this.inputtitle}/>
+						<label style={{fontSize: "12px"}}>This is the name of your company, team or organization.</label>
+						<label style={{fontSize: "12px"}}>Team Description Optional</label>
+
+						<textarea className="groupDesc" onChange={this.inputdescription}/>
+						<label style={{fontSize: "12px"}}>Get your members on board with a few words about your team.</label>
+						
+						<button 
 						 	type="button" 
 						 	className="groupContinue" 
-						 	onClick={this.creategroup}>
+						 	onClick={this.creategroup}
+						 	disabled={this.state.continue?false:true}>
 						 	Continue
 						 </button>
 						</MDBCol>
