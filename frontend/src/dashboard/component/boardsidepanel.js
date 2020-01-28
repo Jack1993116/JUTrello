@@ -203,7 +203,7 @@ class BoardSidePanel extends React.Component{
 		{
 			this.props.usercollection.groups.map(row=>{
 				return (
-					<div key={`grouplist${row._id}`}>
+					<div key={`grouplist${row._id}`} style={{height: "30px"}}>
 						<MDBIcon icon="user-friends" /> {row.name}
 						<button className="sidepanel_btn" type="button"><MDBIcon icon="plus" /></button>
 					</div>)
